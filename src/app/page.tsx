@@ -482,7 +482,7 @@ export default function Home() {
           </a>
           <div className="footer__links">
             <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">App Store</a>
-            <a href="https://paulkhayet.com/privacypolicy.html" target="_blank" rel="noopener noreferrer">Privacy</a>
+            <a href="/privacy-policy">Privacy</a>
             <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">Terms</a>
             <a href="mailto:support@thesimplescalorietracker.com">Support</a>
           </div>

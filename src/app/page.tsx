@@ -442,7 +442,7 @@ export default function Home() {
               <span className="kicker">Good to know</span>
               <h2>Frequently asked questions.</h2>
               <p>Still wondering about something?</p>
-              <a href="mailto:support@thesimplescalorietracker.com">
+              <a href="mailto:support@thesimplestcalorietracker.com">
                 Ask us directly <ArrowRight size={17} aria-hidden="true" />
               </a>
             </div>
@@ -484,7 +484,7 @@ export default function Home() {
             <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">App Store</a>
             <a href="/privacy-policy">Privacy</a>
             <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">Terms</a>
-            <a href="mailto:support@thesimplescalorietracker.com">Support</a>
+            <a href="/support">Support</a>
           </div>
           <p>© {new Date().getFullYear()} The Simplest Calorie Tracker.</p>
         </div>

@@ -1267,11 +1267,75 @@ footer p {
 .privacy-footer__inner > a:first-child { color: white; font-weight: 900; }
 .privacy-footer__inner > a:last-child { display: inline-flex; align-items: center; gap: 6px; color: #ff9a70; font-weight: 850; }
 
+.support-page { min-height: 100vh; background: var(--cream); }
+.support-hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); background: linear-gradient(135deg, #fffaf5 0%, #fff0e0 58%, #ffd8bd 100%); }
+.support-hero::before, .support-hero::after { position: absolute; border-radius: 50%; content: ""; pointer-events: none; }
+.support-hero::before { top: -210px; right: -80px; width: 510px; height: 510px; border: 1px solid rgba(255, 90, 31, .14); }
+.support-hero::after { right: 10%; bottom: -200px; width: 400px; height: 400px; background: rgba(255, 126, 71, .10); }
+.support-hero__inner { position: relative; z-index: 1; padding: 30px 0 76px; }
+.support-nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+.support-back, .support-privacy-link { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 850; }
+.support-back { color: var(--muted); }
+.support-back:hover { color: var(--orange-dark); }
+.support-privacy-link { color: var(--orange-dark); }
+.support-hero__content { max-width: 700px; padding-top: 80px; }
+.support-mark { display: flex; align-items: center; gap: 14px; }
+.support-mark img { border-radius: 16px; box-shadow: 0 12px 28px rgba(117, 64, 35, .17); }
+.support-mark span { display: inline-flex; align-items: center; gap: 6px; color: var(--orange-dark); font-size: 13px; font-weight: 950; letter-spacing: .08em; text-transform: uppercase; }
+.support-mark span svg { width: 17px; height: 17px; }
+.support-hero h1 { margin: 24px 0 18px; font-size: clamp(52px, 7vw, 80px); }
+.support-hero p { max-width: 620px; margin-bottom: 29px; color: #5f5953; font-size: 19px; font-weight: 650; line-height: 1.6; }
+.support-email-button { display: inline-flex; align-items: center; gap: 10px; border-radius: 15px; background: var(--ink); color: white; font-size: 15px; font-weight: 900; padding: 15px 19px; box-shadow: 0 13px 28px rgba(33, 31, 28, .17); }
+.support-email-button:hover { background: var(--orange-dark); transform: translateY(-1px); }
+.support-email-button svg { width: 19px; height: 19px; }
+.support-main { padding: 65px 0 84px; }
+.support-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.support-card { display: flex; min-height: 312px; flex-direction: column; border: 1px solid var(--line); border-radius: 21px; background: rgba(255, 255, 255, .78); padding: 28px; box-shadow: 0 13px 30px rgba(117, 64, 35, .07); }
+.support-card__icon { display: grid; width: 45px; height: 45px; place-items: center; border-radius: 14px; background: var(--peach); color: var(--orange-dark); }
+.support-card__icon svg { width: 22px; height: 22px; }
+.support-card h2 { margin: 23px 0 9px; font-size: 23px; letter-spacing: -.04em; }
+.support-card p { margin: 0; color: var(--muted); font-size: 15px; line-height: 1.6; }
+.support-card ul { display: grid; gap: 8px; margin: 15px 0 0; padding: 0; list-style: none; color: var(--muted); font-size: 13px; }
+.support-card li { display: flex; align-items: flex-start; gap: 7px; line-height: 1.45; }
+.support-card li svg { flex: 0 0 auto; width: 16px; height: 16px; margin-top: 1px; padding: 3px; border-radius: 50%; background: var(--orange); color: white; }
+.support-card__link { display: inline-flex; align-items: center; gap: 6px; margin-top: auto; padding-top: 20px; color: var(--orange-dark); font-size: 14px; font-weight: 900; }
+.support-card__link:hover { color: var(--ink); }
+.support-card__link svg { transition: transform 160ms ease; }
+.support-card__link:hover svg { transform: translateX(3px); }
+.support-answers { display: grid; grid-template-columns: .82fr 1.18fr; gap: 90px; margin-top: 88px; padding-top: 78px; border-top: 1px solid var(--line); }
+.support-answers__heading h2 { margin: 13px 0; font-size: clamp(35px, 4vw, 51px); letter-spacing: -.055em; line-height: 1.02; }
+.support-answers__heading p { max-width: 340px; color: var(--muted); font-size: 16px; }
+.support-answers__list { display: grid; gap: 10px; }
+.support-answers details { border: 1px solid var(--line); border-radius: 14px; background: white; }
+.support-answers summary { display: flex; min-height: 65px; cursor: pointer; align-items: center; justify-content: space-between; gap: 18px; list-style: none; padding: 15px 18px; color: var(--ink); font-weight: 900; }
+.support-answers summary::-webkit-details-marker { display: none; }
+.support-answers summary span { color: var(--orange); font-size: 23px; font-weight: 500; transition: transform 160ms ease; }
+.support-answers details[open] summary span { transform: rotate(45deg); }
+.support-answers details p { margin: -3px 18px 18px; color: var(--muted); font-size: 15px; line-height: 1.62; }
+.support-note { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 22px; margin-top: 75px; border: 1px solid rgba(255, 90, 31, .19); border-radius: 22px; background: linear-gradient(135deg, #fff1e2, #fff9f3); padding: 26px 30px; }
+.support-note__icon { display: grid; width: 49px; height: 49px; place-items: center; border-radius: 15px; background: var(--orange); color: white; }
+.support-note__icon svg { width: 24px; height: 24px; }
+.support-note h2 { margin: 0 0 3px; font-size: 21px; letter-spacing: -.035em; }
+.support-note p { margin: 0; color: var(--muted); font-size: 14px; }
+.support-note > a { display: inline-flex; align-items: center; gap: 6px; border-radius: 999px; background: var(--ink); color: white; font-size: 14px; font-weight: 900; padding: 12px 15px; white-space: nowrap; }
+.support-note > a:hover { background: var(--orange-dark); }
+.support-footer { border-top: 1px solid var(--line); background: #25221f; }
+.support-footer__inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding-top: 27px; padding-bottom: 30px; color: #aaa49e; font-size: 13px; }
+.support-footer__inner a:first-child { color: white; font-weight: 900; }
+.support-footer__inner a:not(:first-child) { color: #ff9a70; font-weight: 800; }
+
 @media (max-width: 820px) {
   .privacy-layout { grid-template-columns: 1fr; gap: 30px; padding-top: 36px; }
   .privacy-aside { position: static; }
   .privacy-contents { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 16px; }
   .privacy-card { padding: 4px 25px; }
+  .support-grid { grid-template-columns: 1fr; }
+  .support-card { min-height: auto; }
+  .support-card__link { margin-top: 22px; }
+  .support-answers { grid-template-columns: 1fr; gap: 30px; margin-top: 62px; padding-top: 60px; }
+  .support-answers__heading p { max-width: 580px; }
+  .support-note { grid-template-columns: auto 1fr; }
+  .support-note > a { grid-column: 1 / -1; justify-self: start; }
 }
 
 @media (max-width: 620px) {
@@ -1291,6 +1355,21 @@ footer p {
   .privacy-section p { font-size: 15px; }
   .privacy-section--highlight { margin: 0 -8px; padding: 24px 12px; }
   .privacy-footer__inner { flex-direction: column; align-items: flex-start; padding-bottom: 94px; }
+  .support-hero__inner { padding-top: 20px; padding-bottom: 52px; }
+  .support-hero__content { padding-top: 55px; }
+  .support-mark img { width: 51px; height: 51px; border-radius: 14px; }
+  .support-mark span { font-size: 10px; }
+  .support-hero h1 { margin-top: 22px; font-size: 50px; }
+  .support-hero p { font-size: 17px; }
+  .support-email-button { font-size: 14px; padding: 14px 15px; }
+  .support-main { padding-top: 42px; padding-bottom: 58px; }
+  .support-card { padding: 24px; }
+  .support-answers { margin-top: 52px; padding-top: 52px; }
+  .support-answers__heading h2 { font-size: 39px; }
+  .support-answers summary { font-size: 15px; }
+  .support-note { grid-template-columns: 1fr; gap: 15px; margin-top: 52px; padding: 24px; }
+  .support-note > a { grid-column: auto; }
+  .support-footer__inner { flex-direction: column; align-items: flex-start; padding-bottom: 94px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

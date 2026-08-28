@@ -141,7 +141,7 @@ export default function PrivacyPolicyPage() {
             <div>
               <h2>Changes and contact</h2>
               <p>We may update this policy as the app or its services change. When we do, we will update the effective date on this page.</p>
-              <p>Questions about privacy? Email <a href="mailto:support@thesimplescalorietracker.com">support@thesimplescalorietracker.com</a>.</p>
+              <p>Questions about privacy? Email <a href="mailto:support@thesimplestcalorietracker.com">support@thesimplestcalorietracker.com</a>.</p>
             </div>
           </section>
         </article>

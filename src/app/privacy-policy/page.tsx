@@ -120,8 +120,6 @@ export default function PrivacyPolicyPage() {
             <div>
               <h2>Your choices</h2>
               <ul className="privacy-list">
-                <li><Check aria-hidden="true" /> Delete individual entries inside the app.</li>
-                <li><Check aria-hidden="true" /> Remove local app data by deleting the app from your device.</li>
                 <li><Check aria-hidden="true" /> Manage Apple permissions, iCloud, HealthKit, and notifications in iOS Settings.</li>
                 <li><Check aria-hidden="true" /> Contact us with questions or a request about support information.</li>
               </ul>

@@ -65,11 +65,6 @@ const quickAnswers = [
     answer:
       "Subscriptions and purchases are managed through Apple. On your iPhone, open Settings, tap your name, then Subscriptions to review or manage them.",
   },
-  {
-    question: "How can I delete my tracking data?",
-    answer:
-      "You can delete entries in the app at any time. To remove all local app data, delete the app from your iPhone. You can also contact us if you have a question about support communications.",
-  },
 ];
 
 export default function SupportPage() {

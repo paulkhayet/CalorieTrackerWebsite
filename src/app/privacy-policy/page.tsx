@@ -64,7 +64,7 @@ export default function PrivacyPolicyPage() {
             <span className="privacy-section__number">01</span>
             <div>
               <h2>Summary</h2>
-              <p>The Simplest Calorie Tracker is built to help you log food without requiring a separate account. Your nutrition entries and settings are stored locally on your device. We do not sell your personal information.</p>
+              <p>The Simplest Calorie Tracker is built to help you log food without requiring a separate account. The nutrition data and settings you enter are stored securely on your device and are not accessible to us. When you enable iCloud backup, Apple may securely include that data in your private iCloud backup, which we also cannot access. We do not sell your personal information.</p>
               <p>We use limited, anonymous or pseudonymous product analytics to understand which app features are useful and to improve reliability. The analytics are designed not to include the details of what you eat.</p>
             </div>
           </section>
@@ -74,7 +74,7 @@ export default function PrivacyPolicyPage() {
             <div>
               <h2>Information we collect</h2>
               <h3>Information you enter</h3>
-              <p>Foods, calories, macro goals, water entries, exercise, weight entries, recipes, reminders, and other tracking settings are used to provide the app’s features and are stored on your device.</p>
+              <p>Foods, calories, macro goals, water entries, exercise, weight entries, recipes, reminders, and other tracking settings are used to provide the app’s features and are stored securely on your device. We do not have access to this data. If you turn on iCloud backup, Apple may store a protected copy in your private iCloud account; that backup is managed by Apple and is not accessible to us.</p>
               <h3>Support messages</h3>
               <p>If you contact us, we receive the email address you use and the contents of your message so we can respond and resolve your request. Support messages are retained only as long as reasonably needed.</p>
               <h3>Apple services</h3>
@@ -110,7 +110,7 @@ export default function PrivacyPolicyPage() {
             <span className="privacy-section__number">05</span>
             <div>
               <h2>Storage, sharing, and retention</h2>
-              <p>We do not sell or rent your information. Your on-device tracking data is not shared with us by default. If you use iCloud, Apple manages that backup. Analytics and support information may be processed by the service providers described above only to provide their respective services.</p>
+              <p>We do not sell or rent your information. The tracking data you enter is stored securely on your device and is not accessible to us. If you enable iCloud backup, Apple manages the secure backup in your private iCloud account; we cannot access that backup. Analytics and support information may be processed by the service providers described above only to provide their respective services.</p>
               <p>We keep support communications and analytics only for as long as reasonably necessary for support, security, reliability, and product-improvement purposes.</p>
             </div>
           </section>

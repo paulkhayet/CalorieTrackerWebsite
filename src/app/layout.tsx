@@ -26,6 +26,13 @@ export const metadata: Metadata = {
     "calorie tracking app for iPhone",
   ],
   alternates: { canonical: "/" },
+  icons: {
+    icon: [
+      { url: "/app-icon.png", type: "image/png", sizes: "512x512" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: "/app-icon.png",
+  },
   applicationName: "The Simplest Calorie Tracker",
   appleWebApp: {
     title: "Simplest Calorie Tracker",

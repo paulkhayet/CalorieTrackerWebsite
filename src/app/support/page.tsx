@@ -16,10 +16,21 @@ const SUPPORT_EMAIL = "support@thesimplestcalorietracker.com";
 const SUPPORT_MAILTO = `mailto:${SUPPORT_EMAIL}`;
 
 export const metadata: Metadata = {
-  title: "Support",
+  title: "Support for The Simplest Calorie Tracker",
   description:
     "Get help with The Simplest Calorie Tracker for iPhone, including meal logging, goals, iCloud backup, and Premium.",
   alternates: { canonical: "/support" },
+  openGraph: {
+    title: "Support for The Simplest Calorie Tracker",
+    description:
+      "Get help with The Simplest Calorie Tracker for iPhone, including meal logging, goals, iCloud backup, and Premium.",
+    url: "/support",
+  },
+  twitter: {
+    title: "Support for The Simplest Calorie Tracker",
+    description:
+      "Get help with The Simplest Calorie Tracker for iPhone, including meal logging, goals, iCloud backup, and Premium.",
+  },
 };
 
 const helpCards = [
@@ -85,9 +96,9 @@ export default function SupportPage() {
               <Image src="/app-icon.png" width={64} height={64} alt="" priority />
               <span><CircleHelp aria-hidden="true" /> Help center</span>
             </div>
-            <h1>We&apos;re here to help.</h1>
+            <h1>Support for The Simplest Calorie Tracker.</h1>
             <p>
-              Need a hand with your goals, food logging, or your app settings? Send us a message and we&apos;ll help you get back to the simple part.
+              Need a hand with The Simplest Calorie Tracker for iPhone—your goals, food logging, or app settings? Send us a message and we&apos;ll help you get back to the simple part.
             </p>
             <a className="support-email-button" href={SUPPORT_MAILTO}>
               <Mail aria-hidden="true" /> {SUPPORT_EMAIL}

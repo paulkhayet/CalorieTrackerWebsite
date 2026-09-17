@@ -8,7 +8,6 @@ import {
   Check,
   Cloud,
   Crown,
-  Droplets,
   Flame,
   Palette,
   PencilLine,
@@ -22,6 +21,7 @@ import {
 
 const APP_STORE_URL =
   "https://apps.apple.com/us/app/the-simplest-calorie-tracker/id6761067469";
+const SITE_URL = "https://thesimplestcalorietracker.com";
 
 const features = [
   {
@@ -84,7 +84,13 @@ const faqs = [
   },
 ];
 
-function AppStoreButton({ compact = false }: { compact?: boolean }) {
+function AppStoreButton({
+  compact = false,
+  placement = "primary-cta",
+}: {
+  compact?: boolean;
+  placement?: string;
+}) {
   return (
     <a
       className={`app-store-button${compact ? " app-store-button--compact" : ""}`}
@@ -92,6 +98,7 @@ function AppStoreButton({ compact = false }: { compact?: boolean }) {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Download The Simplest Calorie Tracker on the App Store"
+      data-app-store-link={placement}
     >
       <Apple aria-hidden="true" strokeWidth={2.4} />
       <span>
@@ -131,15 +138,48 @@ function Phone({
 }
 
 export default function Home() {
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
+    name: "The Simplest Calorie Tracker",
+    alternateName: "Simplest Calorie Tracker",
+    url: SITE_URL,
+    logo: {
+      "@type": "ImageObject",
+      url: `${SITE_URL}/app-icon.png`,
+    },
+    sameAs: [APP_STORE_URL],
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      email: "support@thesimplestcalorietracker.com",
+      url: `${SITE_URL}/support`,
+    },
+  };
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    name: "The Simplest Calorie Tracker",
+    alternateName: "Simplest Calorie Tracker",
+    url: SITE_URL,
+    publisher: { "@id": `${SITE_URL}/#organization` },
+  };
+
   const softwareApplicationJsonLd = {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
+    "@id": `${SITE_URL}/#mobile-application`,
     name: "The Simplest Calorie Tracker",
     operatingSystem: "iOS",
     applicationCategory: "HealthApplication",
-    url: "https://thesimplestcalorietracker.com",
+    url: SITE_URL,
     downloadUrl: APP_STORE_URL,
-    image: "https://thesimplestcalorietracker.com/app-icon.png",
+    image: `${SITE_URL}/app-icon.png`,
+    isPartOf: { "@id": `${SITE_URL}/#website` },
+    publisher: { "@id": `${SITE_URL}/#organization` },
     description:
       "A simple calorie tracker for iPhone with fast food logging, macro and water tracking, saved foods, recipes, streaks, and insights.",
     offers: {
@@ -177,7 +217,14 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(softwareApplicationJsonLd),
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              organizationJsonLd,
+              websiteJsonLd,
+              softwareApplicationJsonLd,
+            ],
+          }),
         }}
       />
       <script
@@ -211,6 +258,7 @@ export default function Home() {
             href={APP_STORE_URL}
             target="_blank"
             rel="noopener noreferrer"
+            data-app-store-link="header"
           >
             Get the app <ArrowRight size={17} aria-hidden="true" />
           </a>
@@ -225,17 +273,18 @@ export default function Home() {
             <div className="hero__copy">
               <div className="eyebrow">
                 <Zap size={16} fill="currentColor" aria-hidden="true" />
-                Calorie tracking without the homework
+                The Simplest Calorie Tracker for iPhone
               </div>
               <h1>
                 The calorie tracker that keeps it <em>simple.</em>
               </h1>
               <p className="hero__lead">
-                Log food in seconds, see where you stand, and get on with your
-                day. No clutter. No nutrition degree required.
+                The Simplest Calorie Tracker helps you log food in seconds,
+                see where you stand, and get on with your day. No clutter. No
+                nutrition degree required.
               </p>
               <div className="hero__actions">
-                <AppStoreButton />
+                <AppStoreButton placement="hero" />
                 <a className="text-link" href="#how-it-works">
                   See how it works <ArrowRight size={18} aria-hidden="true" />
                 </a>
@@ -342,7 +391,7 @@ export default function Home() {
                 <li><Check aria-hidden="true" /> Optional water tracking</li>
                 <li><Check aria-hidden="true" /> Deficit, maintenance, or surplus</li>
               </ul>
-              <AppStoreButton compact />
+              <AppStoreButton compact placement="clear-at-a-glance" />
             </div>
             <div className="showcase__phones">
               <div className="phone-caption phone-caption--back">
@@ -432,7 +481,7 @@ export default function Home() {
                 recipes, more themes, and a custom tracking day.
               </p>
             </div>
-            <AppStoreButton compact />
+            <AppStoreButton compact placement="premium" />
           </div>
         </section>
 
@@ -468,7 +517,7 @@ export default function Home() {
               Download The Simplest Calorie Tracker and log your first meal in
               minutes.
             </p>
-            <AppStoreButton />
+            <AppStoreButton placement="final-cta" />
             <small>Free to download on iPhone. Optional in-app purchases.</small>
           </div>
         </section>
@@ -481,7 +530,7 @@ export default function Home() {
             <span><strong>The Simplest</strong><small>Calorie Tracker</small></span>
           </a>
           <div className="footer__links">
-            <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">App Store</a>
+            <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" data-app-store-link="footer">App Store</a>
             <a href="/privacy-policy">Privacy</a>
             <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">Terms</a>
             <a href="/support">Support</a>
@@ -491,7 +540,7 @@ export default function Home() {
       </footer>
 
       <div className="mobile-download">
-        <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">
+        <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" data-app-store-link="mobile-sticky">
           <Apple fill="currentColor" aria-hidden="true" /> Download on the App Store
         </a>
       </div>

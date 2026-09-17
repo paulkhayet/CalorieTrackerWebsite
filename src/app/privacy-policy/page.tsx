@@ -11,6 +11,17 @@ export const metadata: Metadata = {
   description:
     "Privacy policy for The Simplest Calorie Tracker iOS app, including our PostHog product analytics practices.",
   alternates: { canonical: "/privacy-policy" },
+  openGraph: {
+    title: "Privacy Policy | The Simplest Calorie Tracker",
+    description:
+      "Learn how The Simplest Calorie Tracker for iPhone handles on-device data, iCloud backup, support messages, and limited product analytics.",
+    url: "/privacy-policy",
+  },
+  twitter: {
+    title: "Privacy Policy | The Simplest Calorie Tracker",
+    description:
+      "Learn how The Simplest Calorie Tracker for iPhone handles on-device data, iCloud backup, support messages, and limited product analytics.",
+  },
 };
 
 export default function PrivacyPolicyPage() {
@@ -22,7 +33,7 @@ export default function PrivacyPolicyPage() {
             <Link href="/" className="privacy-back">
               <ArrowLeft size={16} aria-hidden="true" /> Back to home
             </Link>
-            <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="privacy-download">
+            <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" className="privacy-download" data-app-store-link="privacy-header">
               Get the app <ArrowRight size={16} aria-hidden="true" />
             </a>
           </div>
@@ -149,7 +160,7 @@ export default function PrivacyPolicyPage() {
         <div className="container privacy-footer__inner">
           <Link href="/">The Simplest Calorie Tracker</Link>
           <span>Last updated: August 28, 2026</span>
-          <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer">Download on the App Store <ArrowRight size={15} aria-hidden="true" /></a>
+          <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" data-app-store-link="privacy-footer">Download on the App Store <ArrowRight size={15} aria-hidden="true" /></a>
         </div>
       </footer>
     </main>

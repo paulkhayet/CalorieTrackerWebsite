@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Nunito_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { AppStoreAnalytics } from "./_components/app-store-analytics";
 import "./globals.css";
 
 const nunito = Nunito_Sans({
@@ -38,6 +39,9 @@ export const metadata: Metadata = {
     title: "Simplest Calorie Tracker",
     capable: true,
     statusBarStyle: "default",
+  },
+  other: {
+    "apple-itunes-app": "app-id=6761067469",
   },
   openGraph: {
     type: "website",
@@ -89,6 +93,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         {children}
         <Analytics />
+        <AppStoreAnalytics />
       </body>
     </html>
   );

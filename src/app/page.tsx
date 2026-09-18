@@ -286,7 +286,7 @@ export default function Home() {
                 Way to Track Calories
               </h1>
               <p className="hero__lead">
-                Simple keeps the signal clear: log food quickly, see your
+                Track what matters: log food quickly, see your
                 calories and macros at a glance, and move on with your day.
               </p>
               <div className="hero__actions">

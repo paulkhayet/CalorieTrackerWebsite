@@ -281,7 +281,7 @@ export default function Home() {
           <div className="container hero__inner">
             <div className="hero__copy">
               <p className="eyebrow">The official app for iPhone</p>
-              <h1>The Simplest Calorie Tracker for a clearer day.</h1>
+              <h1>The Simplest Way to Track Calories</h1>
               <p className="hero__lead">
                 Log food, see your calories and macros, and move on with your
                 day. No separate account. No cluttered dashboard.

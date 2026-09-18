@@ -126,6 +126,45 @@ function Phone({
   );
 }
 
+function AnimatedHeroPhone() {
+  return (
+    <div
+      aria-label="Animated preview of searching for food, checking today's calories and macros, and reviewing progress in The Simplest Calorie Tracker"
+      className="phone phone--hero phone--hero-animated"
+      role="img"
+    >
+      <div className="phone__screen phone__screen--animated">
+        <Image
+          alt=""
+          className="hero-phone__frame hero-phone__frame--search"
+          fill
+          fetchPriority="high"
+          loading="eager"
+          sizes="(max-width: 720px) 72vw, (max-width: 1100px) 34vw, 340px"
+          src="/screens/search.png"
+        />
+        <Image
+          alt=""
+          className="hero-phone__frame hero-phone__frame--today"
+          fill
+          loading="eager"
+          sizes="(max-width: 720px) 72vw, (max-width: 1100px) 34vw, 340px"
+          src="/screens/today.png"
+        />
+        <Image
+          alt=""
+          className="hero-phone__frame hero-phone__frame--insights"
+          fill
+          loading="eager"
+          sizes="(max-width: 720px) 72vw, (max-width: 1100px) 34vw, 340px"
+          src="/screens/insights.png"
+        />
+        <span aria-hidden="true" className="hero-phone__tap" />
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const organizationJsonLd = {
     "@context": "https://schema.org",
@@ -271,16 +310,11 @@ export default function Home() {
             <div className="hero__visual">
               <span aria-hidden="true" className="hero__ring" />
               <div className="hero__annotation hero__annotation--one">
-                Calories and macros, at a glance.
+                Find food in seconds.
               </div>
-              <Phone
-                alt="The Today screen showing calories, macro progress, and logged foods"
-                className="phone--hero"
-                priority
-                src="/screens/today.png"
-              />
+              <AnimatedHeroPhone />
               <div className="hero__annotation hero__annotation--two">
-                A calm view of today.
+                See your day at a glance.
               </div>
             </div>
           </div>

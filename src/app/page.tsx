@@ -1,6 +1,5 @@
 import Image from "next/image";
 import {
-  Apple,
   ArrowRight,
   BarChart3,
   Check,
@@ -89,11 +88,13 @@ function AppStoreButton({
       rel="noopener noreferrer"
       target="_blank"
     >
-      <Apple aria-hidden="true" />
-      <span>
-        <small>Download on the</small>
-        <strong>App Store</strong>
-      </span>
+      <Image
+        alt="Download on the App Store"
+        className="app-store-badge"
+        height={40}
+        src="/app-store-badge.svg"
+        width={135}
+      />
     </a>
   );
 }
@@ -572,8 +573,8 @@ export default function Home() {
       </footer>
 
       <div className="mobile-download">
-        <a data-app-store-link="mobile-sticky" href={APP_STORE_URL} rel="noopener noreferrer" target="_blank">
-          <Apple aria-hidden="true" fill="currentColor" /> Download on the App Store
+        <a className="mobile-download__badge" data-app-store-link="mobile-sticky" href={APP_STORE_URL} rel="noopener noreferrer" target="_blank">
+          <Image alt="Download on the App Store" height={40} src="/app-store-badge.svg" width={135} />
         </a>
       </div>
     </>

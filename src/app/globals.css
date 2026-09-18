@@ -252,59 +252,25 @@ h3 {
 
 .app-store-button {
   display: inline-flex;
-  min-width: 212px;
-  height: 64px;
+  width: 212px;
+  height: auto;
   align-items: center;
   justify-content: center;
-  gap: 11px;
-  border-radius: 14px;
-  background: var(--ink);
-  color: var(--white);
-  padding: 8px 18px;
-  box-shadow: 0 14px 26px rgba(17, 17, 17, 0.18);
-  transition: background 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  border-radius: 8px;
+  transition: transform 160ms ease;
 }
 
 .app-store-button:hover {
-  background: #000;
-  box-shadow: 0 19px 34px rgba(17, 17, 17, 0.24);
   transform: translateY(-2px);
 }
 
-.app-store-button > svg {
-  width: 29px;
-  height: 29px;
-}
-
-.app-store-button span {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-}
-
-.app-store-button small {
-  margin-bottom: 4px;
-  font-size: 10px;
-  font-weight: 700;
-}
-
-.app-store-button strong {
-  font-size: 22px;
-  letter-spacing: -0.04em;
+.app-store-badge {
+  width: 100%;
+  height: auto;
 }
 
 .app-store-button--compact {
-  min-width: 190px;
-  height: 58px;
-}
-
-.app-store-button--compact > svg {
-  width: 25px;
-  height: 25px;
-}
-
-.app-store-button--compact strong {
-  font-size: 20px;
+  width: 168px;
 }
 
 .rating-proof {
@@ -1068,13 +1034,11 @@ h3 {
 }
 
 .final-cta .app-store-button {
-  background: var(--white);
-  box-shadow: none;
-  color: var(--ink);
+  width: 212px;
 }
 
 .final-cta .app-store-button:hover {
-  background: #ddddda;
+  transform: translateY(-2px);
 }
 
 .final-cta small {
@@ -1757,7 +1721,16 @@ h3 {
     font-size: 14px;
     font-weight: 900;
   }
-  .mobile-download svg { width: 20px; }
+  .mobile-download__badge {
+    height: auto !important;
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+  .mobile-download__badge img {
+    width: 180px;
+    height: auto;
+  }
   .privacy-hero__inner, .support-hero__inner { padding-top: 20px; padding-bottom: 43px; }
   .privacy-title-row { align-items: flex-start; gap: 13px; margin-top: 46px; }
   .privacy-title-row h1 { font-size: 42px; }

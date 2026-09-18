@@ -39,25 +39,25 @@ export const pricingPlans = [
     ],
   },
   {
-    name: "Premium",
+    name: "Premium Monthly",
     price: "$3.99",
-    detail: "Per month, or $29.99 per year.",
+    detail: "Per month, managed through Apple.",
+    features: [
+      "Barcode scanning for packaged foods",
+      "Advanced insights and health tracking",
+      "Unlimited saved foods, recipes, and themes",
+    ],
+    featured: false,
+  },
+  {
+    name: "Premium Yearly",
+    price: "$29.99",
+    detail: "Per year, managed through Apple.",
     features: [
       "Barcode scanning for packaged foods",
       "Advanced insights and health tracking",
       "Unlimited saved foods, recipes, and themes",
     ],
     featured: true,
-  },
-  {
-    name: "Lifetime",
-    price: "$99.99",
-    featured: false,
-    detail: "One payment, no subscription.",
-    features: [
-      "All Premium features",
-      "Pay once through the App Store",
-      "Keep Premium without a recurring charge",
-    ],
   },
 ] as const;

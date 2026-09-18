@@ -445,7 +445,7 @@ export default function Home() {
           <div className="container">
             <div className="section-heading section-heading--center">
               <p className="eyebrow">Clear pricing</p>
-              <h2>Start free. Choose more only if it helps.</h2>
+              <h2>Start free. Choose the Premium option that fits.</h2>
               <p className="section-copy">All purchases are completed and managed securely through the App Store.</p>
             </div>
             <div className="pricing-grid">

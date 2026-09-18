@@ -31,6 +31,7 @@ export const pricingPlans = [
     name: "Free",
     price: "$0",
     featured: false,
+    badge: null,
     detail: "Start with the essentials.",
     features: [
       "Food search and manual entry",
@@ -42,6 +43,7 @@ export const pricingPlans = [
     name: "Premium Monthly",
     price: "$3.99",
     detail: "Per month, managed through Apple.",
+    badge: null,
     features: [
       "Barcode scanning for packaged foods",
       "Advanced insights and health tracking",
@@ -53,6 +55,7 @@ export const pricingPlans = [
     name: "Premium Yearly",
     price: "$29.99",
     detail: "Per year, managed through Apple.",
+    badge: "Save 37%",
     features: [
       "Barcode scanning for packaged foods",
       "Advanced insights and health tracking",

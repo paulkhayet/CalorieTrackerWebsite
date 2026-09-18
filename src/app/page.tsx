@@ -451,7 +451,7 @@ export default function Home() {
             <div className="pricing-grid">
               {pricingPlans.map((plan) => (
                 <article className={`pricing-card${plan.featured ? " pricing-card--featured" : ""}`} key={plan.name}>
-                  {plan.featured && <span className="pricing-card__badge">Most flexible</span>}
+                  {plan.badge && <span className="pricing-card__badge">{plan.badge}</span>}
                   <h3>{plan.name}</h3>
                   <p className="pricing-card__price">{plan.price}</p>
                   <p className="pricing-card__detail">{plan.detail}</p>

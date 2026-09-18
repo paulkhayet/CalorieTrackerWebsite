@@ -286,8 +286,8 @@ export default function Home() {
                 Way to Track Calories
               </h1>
               <p className="hero__lead">
-                Log food, see your calories and macros, and move on with your
-                day. No separate account. No cluttered dashboard.
+                Simple keeps the signal clear: log food quickly, see your
+                calories and macros at a glance, and move on with your day.
               </p>
               <div className="hero__actions">
                 <AppStoreButton placement="hero" />

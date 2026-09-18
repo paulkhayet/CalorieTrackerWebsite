@@ -93,6 +93,26 @@ h1 {
   line-height: 0.99;
 }
 
+.hero__headline-accent {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.hero__headline-accent::after {
+  position: absolute;
+  z-index: -1;
+  right: -0.04em;
+  bottom: -0.08em;
+  left: -0.04em;
+  height: 0.16em;
+  border-bottom: 0.09em solid var(--ink);
+  border-radius: 0 0 58% 42%;
+  content: "";
+  transform: rotate(-1.8deg);
+}
+
 h2 {
   margin-bottom: 18px;
   font-size: clamp(36px, 4vw, 58px);

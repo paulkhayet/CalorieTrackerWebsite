@@ -413,7 +413,7 @@ h3 {
 .logging-methods__screen {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 1170 / 2532;
+  aspect-ratio: 1170 / 2342;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 19px;
   background: #e8ded4;
@@ -1539,6 +1539,21 @@ h3 {
   .process__inner { gap: 60px; }
   .faq__inner { gap: 58px; }
   .support-answers { gap: 50px; }
+}
+
+@media (min-width: 981px) and (max-width: 1080px) {
+  .logging-methods__rail {
+    grid-auto-columns: minmax(170px, 34vw);
+    grid-auto-flow: column;
+    grid-template-columns: unset;
+    overflow-x: auto;
+    margin-right: calc(-1 * ((100vw - min(100% - 48px, 1140px)) / 2));
+    padding: 0 calc((100vw - min(100% - 48px, 1140px)) / 2) 12px 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+  }
+
+  .logging-methods__card { scroll-snap-align: start; }
 }
 
 @media (max-width: 800px) {

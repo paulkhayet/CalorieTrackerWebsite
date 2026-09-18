@@ -389,74 +389,6 @@ h3 {
   transform: rotate(2deg);
 }
 
-.phone--hero-animated {
-  animation: hero-phone-float 7s ease-in-out infinite;
-}
-
-.phone__screen--animated .hero-phone__frame {
-  opacity: 0;
-  object-fit: cover;
-  transform: scale(1.015);
-  will-change: opacity, transform;
-}
-
-.hero-phone__frame--search {
-  animation: hero-screen-search 12s ease-in-out infinite;
-}
-
-.hero-phone__frame--today {
-  animation: hero-screen-today 12s ease-in-out infinite;
-}
-
-.hero-phone__frame--insights {
-  animation: hero-screen-insights 12s ease-in-out infinite;
-}
-
-.hero-phone__tap {
-  position: absolute;
-  z-index: 3;
-  top: 51%;
-  left: 53%;
-  width: 28px;
-  height: 28px;
-  border: 2px solid rgba(255, 255, 255, 0.94);
-  border-radius: 50%;
-  background: rgba(17, 17, 17, 0.72);
-  box-shadow: 0 0 0 7px rgba(17, 17, 17, 0.12);
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.55);
-  animation: hero-phone-tap 12s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes hero-phone-float {
-  0%, 100% { transform: rotate(2deg) translateY(0); }
-  50% { transform: rotate(2deg) translateY(-9px); }
-}
-
-@keyframes hero-screen-search {
-  0%, 28% { opacity: 1; transform: scale(1); }
-  33%, 100% { opacity: 0; transform: scale(1.015); }
-}
-
-@keyframes hero-screen-today {
-  0%, 28% { opacity: 0; transform: scale(1.015); }
-  33%, 61% { opacity: 1; transform: scale(1); }
-  66%, 100% { opacity: 0; transform: scale(1.015); }
-}
-
-@keyframes hero-screen-insights {
-  0%, 61% { opacity: 0; transform: scale(1.015); }
-  66%, 94% { opacity: 1; transform: scale(1); }
-  100% { opacity: 0; transform: scale(1.015); }
-}
-
-@keyframes hero-phone-tap {
-  0%, 14%, 32%, 100% { opacity: 0; transform: translate(-50%, -50%) scale(0.55); }
-  17%, 21% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-  24% { opacity: 0; transform: translate(-50%, -50%) scale(1.45); }
-}
-
 .hero__annotation {
   position: absolute;
   z-index: 2;
@@ -1718,24 +1650,6 @@ h3 {
   .support-hero p { font-size: 16px; }
   .support-main { padding-top: 41px; padding-bottom: 56px; }
   .support-note { grid-template-columns: 1fr; gap: 14px; margin-top: 52px; padding: 23px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .phone--hero-animated,
-  .phone__screen--animated .hero-phone__frame {
-    animation: none;
-  }
-
-  .phone__screen--animated .hero-phone__frame--search,
-  .phone__screen--animated .hero-phone__frame--insights,
-  .hero-phone__tap {
-    display: none;
-  }
-
-  .phone__screen--animated .hero-phone__frame--today {
-    opacity: 1;
-    transform: none;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

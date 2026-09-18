@@ -29,8 +29,8 @@ export default async function OpenGraphImage() {
       <div
         style={{
           alignItems: "center",
-          background: "#fff8f0",
-          color: "#1f1d1a",
+          background: "#f7f7f5",
+          color: "#111111",
           display: "flex",
           height: "100%",
           overflow: "hidden",
@@ -41,7 +41,7 @@ export default async function OpenGraphImage() {
       >
         <div
           style={{
-            background: "#ffe7d2",
+            background: "#e3e3df",
             borderRadius: "999px",
             height: "760px",
             position: "absolute",
@@ -66,7 +66,7 @@ export default async function OpenGraphImage() {
             />
             <span
               style={{
-                color: "#c94a19",
+                color: "#111111",
                 fontSize: "22px",
                 fontWeight: 700,
                 letterSpacing: "0.08em",
@@ -92,7 +92,7 @@ export default async function OpenGraphImage() {
           </div>
           <div
             style={{
-              color: "#68615a",
+              color: "#656561",
               fontSize: "26px",
               lineHeight: 1.35,
               marginTop: "28px",
@@ -103,9 +103,9 @@ export default async function OpenGraphImage() {
         </div>
         <div
           style={{
-            border: "11px solid #201e1b",
+            border: "11px solid #161616",
             borderRadius: "48px",
-            boxShadow: "0 28px 62px rgba(85, 44, 25, 0.24)",
+            boxShadow: "0 28px 62px rgba(17, 17, 17, 0.24)",
             display: "flex",
             height: "566px",
             overflow: "hidden",

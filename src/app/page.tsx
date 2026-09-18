@@ -23,12 +23,12 @@ const faqs = [
   {
     question: "What does Premium add?",
     answer:
-      "Premium includes barcode scanning, advanced insights, health tracking, unlimited saved foods and recipes, and additional customization. Plans are purchased and managed through Apple.",
+      "Premium includes barcode scanning, AI Meal Scan, advanced insights, health tracking, unlimited saved foods and recipes, and additional customization. Plans are purchased and managed through Apple.",
   },
   {
     question: "How can I add food?",
     answer:
-      "Search thousands of foods, enter a food manually, use a saved food or recipe, or choose a serving size in grams. Premium also includes barcode scanning for packaged foods.",
+      "Search thousands of foods, enter a food manually, use a saved food or recipe, or choose a serving size in grams. Premium also includes barcode scanning and AI Meal Scan.",
   },
   {
     question: "Can I scan a barcode?",
@@ -173,7 +173,7 @@ export default function Home() {
     featureList: [
       "Food search and manual entry",
       "Calorie, macro, fiber, and water tracking",
-      "Barcode scanning with Premium",
+      "Barcode scanning and AI Meal Scan with Premium",
       "Saved foods and recipes",
       "Apple Health integration",
       "Insights, streaks, and reminders",
@@ -283,27 +283,70 @@ export default function Home() {
           </div>
         </section>
 
-        <section aria-labelledby="problem-heading" className="problem section">
-          <div className="container problem__inner">
-            <div className="section-heading">
-              <p className="eyebrow">Less friction, more follow-through</p>
-              <h2 id="problem-heading">Food logging should not become another project.</h2>
+        <section aria-labelledby="logging-heading" className="logging-methods section" id="how-to-log">
+          <div className="container">
+            <div className="section-heading logging-methods__heading">
+              <p className="eyebrow">Six simple ways to log</p>
+              <h2 id="logging-heading">There&apos;s an easy way to log every meal.</h2>
+              <p className="section-copy">
+                Search, type it in, reuse what you love, or scan when that is faster.
+              </p>
             </div>
-            <div className="problem__grid">
-              <article>
-                <span>01</span>
-                <h3>Too many decisions</h3>
-                <p>When every entry requires a maze of menus, logging becomes easy to put off.</p>
+
+            <div className="logging-methods__rail" aria-label="Ways to log food in the app">
+              <article className="logging-methods__card">
+                <div className="logging-methods__screen">
+                  <Image alt="Search Foods screen with popular food suggestions" fill sizes="(max-width: 700px) 72vw, 180px" src="/screens/logging/search-food.png" />
+                </div>
+                <div className="logging-methods__caption">
+                  <h3>Search food</h3>
+                  <p>Find a food in seconds.</p>
+                </div>
               </article>
-              <article>
-                <span>02</span>
-                <h3>Too much on screen</h3>
-                <p>When the important numbers are buried, it is harder to know where you stand.</p>
+              <article className="logging-methods__card">
+                <div className="logging-methods__screen">
+                  <Image alt="Manual food entry screen for calories and macros" fill sizes="(max-width: 700px) 72vw, 180px" src="/screens/logging/manual-entry.png" />
+                </div>
+                <div className="logging-methods__caption">
+                  <h3>Manual entry</h3>
+                  <p>Use your own numbers.</p>
+                </div>
               </article>
-              <article>
-                <span>03</span>
-                <h3>Too little consistency</h3>
-                <p>When tracking feels heavy, it is difficult to turn a simple check-in into a routine.</p>
+              <article className="logging-methods__card">
+                <div className="logging-methods__screen">
+                  <Image alt="Saved Foods library showing everyday meals" fill sizes="(max-width: 700px) 72vw, 180px" src="/screens/logging/saved-foods.png" />
+                </div>
+                <div className="logging-methods__caption">
+                  <h3>Saved foods</h3>
+                  <p>Reuse your regulars.</p>
+                </div>
+              </article>
+              <article className="logging-methods__card">
+                <div className="logging-methods__screen">
+                  <Image alt="Recipes library showing a saved meal" fill sizes="(max-width: 700px) 72vw, 180px" src="/screens/logging/recipes.png" />
+                </div>
+                <div className="logging-methods__caption">
+                  <h3>Recipes</h3>
+                  <p>Log the whole meal.</p>
+                </div>
+              </article>
+              <article className="logging-methods__card">
+                <div className="logging-methods__screen">
+                  <Image alt="Barcode scanner for packaged foods" fill sizes="(max-width: 700px) 72vw, 180px" src="/screens/logging/scan-barcode.png" />
+                </div>
+                <div className="logging-methods__caption">
+                  <div className="logging-methods__title-row"><h3>Scan barcode</h3><span>Premium</span></div>
+                  <p>Point, scan, and add.</p>
+                </div>
+              </article>
+              <article className="logging-methods__card">
+                <div className="logging-methods__screen">
+                  <Image alt="AI meal scan screen with photo and photo-library options" fill sizes="(max-width: 700px) 72vw, 180px" src="/screens/logging/scan-meal.png" />
+                </div>
+                <div className="logging-methods__caption">
+                  <div className="logging-methods__title-row"><h3>Scan meal</h3><span>Premium</span></div>
+                  <p>Snap it, then review it.</p>
+                </div>
               </article>
             </div>
           </div>

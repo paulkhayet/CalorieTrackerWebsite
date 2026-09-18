@@ -45,7 +45,7 @@ export const pricingPlans = [
     detail: "Per month, managed through Apple.",
     badge: null,
     features: [
-      "Barcode scanning for packaged foods",
+      "Barcode scanning and AI Meal Scan",
       "Advanced insights and health tracking",
       "Unlimited saved foods, recipes, and themes",
     ],
@@ -57,7 +57,7 @@ export const pricingPlans = [
     detail: "Per year, managed through Apple.",
     badge: "Save 37%",
     features: [
-      "Barcode scanning for packaged foods",
+      "Barcode scanning and AI Meal Scan",
       "Advanced insights and health tracking",
       "Unlimited saved foods, recipes, and themes",
     ],

@@ -513,19 +513,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="founder section">
-          <div className="container founder__inner">
-            <Image alt="" className="founder__icon" height={86} src="/app-icon.png" width={86} />
-            <div>
-              <p className="eyebrow">Built simply</p>
-              <h2>Made by Paul Khayet for people who want a clearer daily food log.</h2>
-              <p className="section-copy">
-                The Simplest Calorie Tracker is a focused iPhone app built around the essentials: log food, understand your day, and keep moving without a complicated dashboard or a separate account.
-              </p>
-            </div>
-          </div>
-        </section>
-
         <section className="faq section" id="faq">
           <div className="container faq__inner">
             <div className="section-heading">

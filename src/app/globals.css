@@ -886,35 +886,6 @@ h3 {
   color: var(--ink);
 }
 
-.founder {
-  background: var(--cream);
-}
-
-.founder__inner {
-  display: grid;
-  grid-template-columns: auto minmax(0, 680px);
-  justify-content: center;
-  gap: 29px;
-  border: 1px solid var(--line);
-  border-radius: 24px;
-  background: var(--white);
-  padding: 44px 50px;
-}
-
-.founder__icon {
-  border-radius: 21px;
-  box-shadow: 0 13px 26px rgba(17, 17, 17, 0.15);
-}
-
-.founder h2 {
-  margin-bottom: 14px;
-  font-size: clamp(29px, 3vw, 42px);
-}
-
-.founder .section-copy {
-  margin: 0;
-}
-
 .faq {
   border-top: 1px solid var(--line);
   background: var(--white);
@@ -1691,9 +1662,6 @@ h3 {
   .phone--insights { max-width: 247px; }
   .testimonial { min-height: 0; }
   .pricing-card { min-height: 0; }
-  .founder__inner { grid-template-columns: 1fr; gap: 22px; padding: 29px; }
-  .founder__icon { width: 68px; height: 68px; border-radius: 17px; }
-  .founder h2 { font-size: 30px; }
   .faq details p { margin-right: 0; }
   .final-cta { padding: 73px 0 99px; }
   .final-cta h2 { font-size: 42px; }

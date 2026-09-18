@@ -10,6 +10,7 @@
   --peach-soft: #fafaf9;
   --orange: #111111;
   --orange-dark: #111111;
+  --accent-orange: #ef5b27;
   --line: rgba(17, 17, 17, 0.14);
   --white: #ffffff;
   --shadow: 0 24px 60px rgba(17, 17, 17, 0.08);
@@ -107,7 +108,7 @@ h1 {
   bottom: -0.08em;
   left: -0.04em;
   height: 0.16em;
-  border-bottom: 0.09em solid var(--ink);
+  border-bottom: 0.09em solid var(--accent-orange);
   border-radius: 0 0 58% 42%;
   content: "";
   transform: rotate(-1.8deg);

@@ -273,19 +273,12 @@ export default function Home() {
               </ul>
             </div>
             <div className="hero__visual">
-              <span aria-hidden="true" className="hero__ring" />
-              <div className="hero__annotation hero__annotation--one">
-                Find food in seconds.
-              </div>
               <Phone
                 alt="The Today screen showing calories, macro progress, and logged foods"
                 className="phone--hero"
                 priority
                 src="/screens/today.png"
               />
-              <div className="hero__annotation hero__annotation--two">
-                See your day at a glance.
-              </div>
             </div>
           </div>
         </section>

@@ -3,104 +3,93 @@ import {
   Apple,
   ArrowRight,
   BarChart3,
-  BellRing,
-  Bookmark,
   Check,
   Cloud,
-  Crown,
-  Flame,
-  Palette,
-  PencilLine,
-  ScanBarcode,
   Search,
   ShieldCheck,
-  Sparkles,
-  Utensils,
-  Zap,
 } from "lucide-react";
-
-const APP_STORE_URL =
-  "https://apps.apple.com/us/app/the-simplest-calorie-tracker/id6761067469";
-const SITE_URL = "https://thesimplestcalorietracker.com";
-
-const features = [
-  {
-    icon: Search,
-    title: "Find food fast",
-    copy: "Search popular foods, scan a barcode, choose a saved favorite, or enter it yourself.",
-  },
-  {
-    icon: BarChart3,
-    title: "See what matters",
-    copy: "Keep calories, protein, carbs, fat, and optional water tracking in one calm view.",
-  },
-  {
-    icon: Bookmark,
-    title: "Save your regulars",
-    copy: "Build a reusable library of foods and recipes so tomorrow takes even less effort.",
-  },
-  {
-    icon: Flame,
-    title: "Build a steady streak",
-    copy: "Simple streaks and smart reminders help consistency feel rewarding—not demanding.",
-  },
-  {
-    icon: Sparkles,
-    title: "Understand your habits",
-    copy: "Explore history, trends, patterns, and macro insights when you want the bigger picture.",
-  },
-  {
-    icon: Palette,
-    title: "Make it feel like yours",
-    copy: "Choose your theme, goals, macros, day end, water units, and appearance.",
-  },
-];
+import {
+  APP_STORE_URL,
+  appStoreSnapshot,
+  pricingPlans,
+  SITE_URL,
+} from "./_content/marketing";
 
 const faqs = [
   {
     question: "Is The Simplest Calorie Tracker free?",
     answer:
-      "Yes. The app is free to download and includes everything you need to start tracking. Optional Premium unlocks extras like barcode scanning, advanced insights, unlimited saved foods and recipes, and more customization.",
+      "Yes. The app is free to download and gives you the essentials for logging food, tracking calories and macros, and setting daily goals. Premium is optional.",
   },
   {
-    question: "What can I track?",
+    question: "What does Premium add?",
     answer:
-      "Track calories, protein, carbohydrates, fat, and water. You decide which macros appear and can set targets that fit your routine.",
+      "Premium includes barcode scanning, advanced insights, health tracking, unlimited saved foods and recipes, and additional customization. Plans are purchased and managed through Apple.",
   },
   {
-    question: "Can I scan food barcodes?",
+    question: "How can I add food?",
     answer:
-      "Yes. Premium includes barcode scanning for quick nutrition lookup, alongside food search, manual entry, saved foods, and recipes.",
+      "Search thousands of foods, enter a food manually, use a saved food or recipe, or choose a serving size in grams. Premium also includes barcode scanning for packaged foods.",
   },
   {
-    question: "Do I need to create an account?",
+    question: "Can I scan a barcode?",
     answer:
-      "You can start tracking without creating a separate app account. Optional iCloud backup uses your Apple account to help keep your data safe.",
+      "Yes. Barcode scanning is included with Premium for fast packaged-food lookup.",
   },
   {
-    question: "Is it only for weight loss?",
+    question: "Does the app work with Apple Health?",
     answer:
-      "No. Choose a deficit, maintenance, or surplus goal. The app is designed to support the way you want to eat—not prescribe a single plan.",
+      "The app can work with Apple Health for steps, goals, and streaks. Premium adds active calories, workouts, and weight tracking with Apple Health. You choose which permissions to grant in iOS.",
+  },
+  {
+    question: "Where is my tracking data stored?",
+    answer:
+      "The data you enter is stored securely on your device and is not accessible to us. If you enable iCloud backup, Apple may store a protected copy in your private iCloud account, which we also cannot access.",
+  },
+  {
+    question: "How do I get help?",
+    answer:
+      "Visit our Support page or email support@thesimplestcalorietracker.com. Include your iPhone model, iOS version, app version, and a screenshot when it helps us understand an issue.",
+  },
+];
+
+const benefits = [
+  {
+    icon: Search,
+    title: "Log with less effort",
+    copy: "Search thousands of foods, enter nutrition yourself, or return to foods and recipes you use often.",
+    points: ["Food search", "Manual entry", "Saved foods and recipes"],
+  },
+  {
+    icon: BarChart3,
+    title: "See your day clearly",
+    copy: "Calories, macros, optional fiber, and water stay together in a Today view that is easy to scan.",
+    points: ["Daily calorie goals", "Optional macros and water", "Serving sizes and grams"],
+  },
+  {
+    icon: Cloud,
+    title: "Keep it your way",
+    copy: "Set the goals and reminders that fit your routine, see your history when useful, and keep your data backed up.",
+    points: ["Goals and streaks", "Insights and history", "Private iCloud backup"],
   },
 ];
 
 function AppStoreButton({
   compact = false,
-  placement = "primary-cta",
+  placement,
 }: {
   compact?: boolean;
-  placement?: string;
+  placement: string;
 }) {
   return (
     <a
       className={`app-store-button${compact ? " app-store-button--compact" : ""}`}
-      href={APP_STORE_URL}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Download The Simplest Calorie Tracker on the App Store"
       data-app-store-link={placement}
+      href={APP_STORE_URL}
+      rel="noopener noreferrer"
+      target="_blank"
     >
-      <Apple aria-hidden="true" strokeWidth={2.4} />
+      <Apple aria-hidden="true" />
       <span>
         <small>Download on the</small>
         <strong>App Store</strong>
@@ -124,13 +113,13 @@ function Phone({
     <div className={`phone ${className}`.trim()}>
       <div className="phone__screen">
         <Image
-          src={src}
           alt={alt}
           fill
-          priority={priority}
-          loading={priority ? "eager" : "lazy"}
           fetchPriority={priority ? "high" : "auto"}
-          sizes="(max-width: 720px) 72vw, 360px"
+          loading={priority ? "eager" : "lazy"}
+          priority={priority}
+          sizes="(max-width: 720px) 72vw, (max-width: 1100px) 34vw, 330px"
+          src={src}
         />
       </div>
     </div>
@@ -145,10 +134,7 @@ export default function Home() {
     name: "The Simplest Calorie Tracker",
     alternateName: "Simplest Calorie Tracker",
     url: SITE_URL,
-    logo: {
-      "@type": "ImageObject",
-      url: `${SITE_URL}/app-icon.png`,
-    },
+    logo: { "@type": "ImageObject", url: `${SITE_URL}/app-icon.png` },
     sameAs: [APP_STORE_URL],
     contactPoint: {
       "@type": "ContactPoint",
@@ -168,7 +154,7 @@ export default function Home() {
     publisher: { "@id": `${SITE_URL}/#organization` },
   };
 
-  const softwareApplicationJsonLd = {
+  const mobileApplicationJsonLd = {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
     "@id": `${SITE_URL}/#mobile-application`,
@@ -181,20 +167,15 @@ export default function Home() {
     isPartOf: { "@id": `${SITE_URL}/#website` },
     publisher: { "@id": `${SITE_URL}/#organization` },
     description:
-      "A simple calorie tracker for iPhone with fast food logging, macro and water tracking, saved foods, recipes, streaks, and insights.",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-    },
+      "A calm calorie and macro tracker for iPhone with food search, manual entry, goals, saved foods, recipes, insights, and optional Premium features.",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
     featureList: [
-      "Calorie and macro tracking",
-      "Food search",
-      "Barcode scanning",
-      "Water tracking",
+      "Food search and manual entry",
+      "Calorie, macro, fiber, and water tracking",
+      "Barcode scanning with Premium",
       "Saved foods and recipes",
-      "Nutrition insights and history",
-      "Tracking streaks and reminders",
+      "Apple Health integration",
+      "Insights, streaks, and reminders",
       "iCloud backup",
     ],
   };
@@ -205,229 +186,196 @@ export default function Home() {
     mainEntity: faqs.map((faq) => ({
       "@type": "Question",
       name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
     })),
   };
 
   return (
     <>
       <script
-        type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@graph": [
-              organizationJsonLd,
-              websiteJsonLd,
-              softwareApplicationJsonLd,
-            ],
+            "@graph": [organizationJsonLd, websiteJsonLd, mobileApplicationJsonLd],
           }),
         }}
+        type="application/ld+json"
       />
       <script
-        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        type="application/ld+json"
       />
 
       <header className="site-header">
         <div className="container header-inner">
-          <a className="brand" href="#top" aria-label="Back to top">
+          <a aria-label="Back to top" className="brand" href="#top">
             <Image
-              className="brand__icon"
-              src="/app-icon.png"
-              width={48}
-              height={48}
               alt=""
+              className="brand__icon"
+              height={44}
               priority
+              src="/app-icon.png"
+              width={44}
             />
-            <span>
-              <strong>The Simplest</strong>
-              <small>Calorie Tracker</small>
-            </span>
+            <span>The Simplest Calorie Tracker</span>
           </a>
           <nav aria-label="Primary navigation">
             <a href="#how-it-works">How it works</a>
             <a href="#features">Features</a>
+            <a href="#pricing">Pricing</a>
             <a href="#faq">FAQ</a>
           </nav>
           <a
-            className="header-cta"
-            href={APP_STORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            className="header-download"
             data-app-store-link="header"
+            href={APP_STORE_URL}
+            rel="noopener noreferrer"
+            target="_blank"
           >
-            Get the app <ArrowRight size={17} aria-hidden="true" />
+            Download on the App Store <ArrowRight aria-hidden="true" size={16} />
           </a>
         </div>
       </header>
 
       <main id="top">
         <section className="hero">
-          <div className="hero__glow hero__glow--one" />
-          <div className="hero__glow hero__glow--two" />
           <div className="container hero__inner">
             <div className="hero__copy">
-              <div className="eyebrow">
-                <Zap size={16} fill="currentColor" aria-hidden="true" />
-                The Simplest Calorie Tracker for iPhone
-              </div>
-              <h1>
-                The calorie tracker that keeps it <em>simple.</em>
-              </h1>
+              <p className="eyebrow">The official app for iPhone</p>
+              <h1>The Simplest Calorie Tracker for a clearer day.</h1>
               <p className="hero__lead">
-                The Simplest Calorie Tracker helps you log food in seconds,
-                see where you stand, and get on with your day. No clutter. No
-                nutrition degree required.
+                Log food, see your calories and macros, and move on with your
+                day. No separate account. No cluttered dashboard.
               </p>
               <div className="hero__actions">
                 <AppStoreButton placement="hero" />
-                <a className="text-link" href="#how-it-works">
-                  See how it works <ArrowRight size={18} aria-hidden="true" />
+                <a
+                  aria-label="Read App Store reviews"
+                  className="rating-proof"
+                  data-app-store-link="hero-rating"
+                  href={APP_STORE_URL}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  <span aria-hidden="true">★★★★★</span>
+                  <strong>{appStoreSnapshot.rating} on the App Store</strong>
+                  <small>{appStoreSnapshot.ratingCount} ratings</small>
                 </a>
               </div>
-              <div className="hero__trust" aria-label="Product details">
-                <span>
-                  <Check aria-hidden="true" /> Free to download
-                </span>
-                <span>
-                  <Check aria-hidden="true" /> Built for iPhone
-                </span>
-                <span>
-                  <Check aria-hidden="true" /> No separate account
-                </span>
-              </div>
+              <ul className="hero__details" aria-label="App highlights">
+                <li><Check aria-hidden="true" /> Free to download</li>
+                <li><Check aria-hidden="true" /> Built for iPhone</li>
+                <li><Check aria-hidden="true" /> No separate login</li>
+              </ul>
             </div>
-
-            <div className="hero__visual" aria-label="The app's Today screen">
-              <div className="float-card float-card--search">
-                <span className="float-card__icon">
-                  <Search aria-hidden="true" />
-                </span>
-                <span>
-                  <small>FAST FOOD SEARCH</small>
-                  <strong>Greek yogurt</strong>
-                </span>
-                <span className="float-card__cal">180 kcal</span>
+            <div className="hero__visual">
+              <span aria-hidden="true" className="hero__ring" />
+              <div className="hero__annotation hero__annotation--one">
+                Calories and macros, at a glance.
               </div>
               <Phone
-                src="/screens/today.png"
-                alt="Today screen showing remaining calories, macros, and recently logged foods"
-                priority
+                alt="The Today screen showing calories, macro progress, and logged foods"
                 className="phone--hero"
+                priority
+                src="/screens/today.png"
               />
-              <div className="float-card float-card--streak">
-                <span className="float-card__flame">
-                  <Flame fill="currentColor" aria-hidden="true" />
-                </span>
-                <span>
-                  <strong>2 day streak</strong>
-                  <small>One day at a time</small>
-                </span>
+              <div className="hero__annotation hero__annotation--two">
+                A calm view of today.
               </div>
             </div>
           </div>
         </section>
 
-        <section className="proof-bar" aria-label="App highlights">
-          <div className="container proof-bar__inner">
-            <span><Search aria-hidden="true" /> Fast food search</span>
-            <span><ScanBarcode aria-hidden="true" /> Barcode scanning</span>
-            <span><Utensils aria-hidden="true" /> Saved foods &amp; recipes</span>
-            <span><BarChart3 aria-hidden="true" /> Clear progress</span>
+        <section aria-labelledby="problem-heading" className="problem section">
+          <div className="container problem__inner">
+            <div className="section-heading">
+              <p className="eyebrow">Less friction, more follow-through</p>
+              <h2 id="problem-heading">Food logging should not become another project.</h2>
+            </div>
+            <div className="problem__grid">
+              <article>
+                <span>01</span>
+                <h3>Too many decisions</h3>
+                <p>When every entry requires a maze of menus, logging becomes easy to put off.</p>
+              </article>
+              <article>
+                <span>02</span>
+                <h3>Too much on screen</h3>
+                <p>When the important numbers are buried, it is harder to know where you stand.</p>
+              </article>
+              <article>
+                <span>03</span>
+                <h3>Too little consistency</h3>
+                <p>When tracking feels heavy, it is difficult to turn a simple check-in into a routine.</p>
+              </article>
+            </div>
           </div>
         </section>
 
-        <section className="section intro" id="how-it-works">
+        <section className="process section" id="how-it-works">
+          <div className="container process__inner">
+            <div className="process__visual">
+              <Phone
+                alt="Food search screen with suggestions for logging a meal"
+                className="phone--search"
+                src="/screens/search.png"
+              />
+            </div>
+            <div className="process__copy">
+              <p className="eyebrow">How it works</p>
+              <h2>Find it. Log it. See your day.</h2>
+              <p className="section-copy">
+                The app is designed around the few moments that matter: adding
+                food and understanding today&apos;s progress.
+              </p>
+              <ol className="process__steps">
+                <li>
+                  <span>1</span>
+                  <div>
+                    <strong>Find your food</strong>
+                    <p>Search, use a saved food, scan a barcode with Premium, or add it yourself.</p>
+                  </div>
+                </li>
+                <li>
+                  <span>2</span>
+                  <div>
+                    <strong>Log the serving</strong>
+                    <p>Choose a serving size or grams, then add it to today in a few taps.</p>
+                  </div>
+                </li>
+                <li>
+                  <span>3</span>
+                  <div>
+                    <strong>See where you stand</strong>
+                    <p>Your calorie and macro progress updates in one simple, useful view.</p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <section className="features section" id="features">
           <div className="container">
             <div className="section-heading section-heading--center">
-              <span className="kicker">Three steps. That&apos;s it.</span>
-              <h2>Tracking that fits into real life.</h2>
-              <p>
-                The best calorie tracker is the one you keep using. So every
-                interaction is designed to be quick, clear, and easy to repeat.
-              </p>
+              <p className="eyebrow">Made for the everyday</p>
+              <h2>Simple on purpose. Capable when you need it.</h2>
+              <p className="section-copy">The features stay focused on helping you log, understand, and continue.</p>
             </div>
+            <div className="benefit-grid">
+              {benefits.map((benefit) => {
+                const Icon = benefit.icon;
 
-            <div className="steps">
-              <article className="step-card">
-                <span className="step-card__number">01</span>
-                <div className="step-card__icon"><Search aria-hidden="true" /></div>
-                <h3>Find your food</h3>
-                <p>Search, scan, pick a saved favorite, or enter it manually.</p>
-              </article>
-              <article className="step-card step-card--featured">
-                <span className="step-card__number">02</span>
-                <div className="step-card__icon"><PencilLine aria-hidden="true" /></div>
-                <h3>Log in a tap</h3>
-                <p>Adjust the serving if you need to, then add it to today.</p>
-              </article>
-              <article className="step-card">
-                <span className="step-card__number">03</span>
-                <div className="step-card__icon"><BarChart3 aria-hidden="true" /></div>
-                <h3>Know where you stand</h3>
-                <p>Calories and macros update instantly in one simple view.</p>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <section className="section showcase">
-          <div className="container showcase__inner">
-            <div className="showcase__copy">
-              <span className="kicker">Clear at a glance</span>
-              <h2>All the signal. None of the noise.</h2>
-              <p>
-                Open the app and immediately see your remaining calories,
-                macros, streak, and today&apos;s food—without digging through
-                dashboards.
-              </p>
-              <ul className="check-list">
-                <li><Check aria-hidden="true" /> Personalized calorie goal</li>
-                <li><Check aria-hidden="true" /> Optional macro targets</li>
-                <li><Check aria-hidden="true" /> Optional water tracking</li>
-                <li><Check aria-hidden="true" /> Deficit, maintenance, or surplus</li>
-              </ul>
-              <AppStoreButton compact placement="clear-at-a-glance" />
-            </div>
-            <div className="showcase__phones">
-              <div className="phone-caption phone-caption--back">
-                <Phone
-                  src="/screens/search.png"
-                  alt="Search Foods screen with popular food suggestions"
-                />
-                <span>Find food fast</span>
-              </div>
-              <div className="phone-caption phone-caption--front">
-                <Phone
-                  src="/screens/today.png"
-                  alt="Calorie and macro progress on the Today screen"
-                />
-                <span>Stay on pace</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section features" id="features">
-          <div className="container">
-            <div className="section-heading">
-              <span className="kicker">Simple doesn&apos;t mean limited</span>
-              <h2>Everything you need. Exactly where you expect it.</h2>
-            </div>
-            <div className="feature-grid">
-              {features.map((feature) => {
-                const Icon = feature.icon;
                 return (
-                  <article className="feature-card" key={feature.title}>
-                    <span className="feature-card__icon">
-                      <Icon aria-hidden="true" />
-                    </span>
-                    <h3>{feature.title}</h3>
-                    <p>{feature.copy}</p>
+                  <article className="benefit-card" key={benefit.title}>
+                    <span className="benefit-card__icon"><Icon aria-hidden="true" /></span>
+                    <h3>{benefit.title}</h3>
+                    <p>{benefit.copy}</p>
+                    <ul>
+                      {benefit.points.map((point) => (
+                        <li key={point}><Check aria-hidden="true" />{point}</li>
+                      ))}
+                    </ul>
                   </article>
                 );
               })}
@@ -435,65 +383,117 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section insights">
+        <section className="insights section">
           <div className="container insights__inner">
-            <div className="insights__visual">
-              <div className="insights__halo" />
-              <Phone
-                src="/screens/insights.png"
-                alt="Insights screen showing nutrition trends and tracking history"
-              />
-              <div className="mini-stat mini-stat--top">
-                <Flame fill="currentColor" aria-hidden="true" />
-                <span><strong>Keep the streak</strong><small>Consistency, made visible</small></span>
-              </div>
-              <div className="mini-stat mini-stat--bottom">
-                <BarChart3 aria-hidden="true" />
-                <span><strong>Spot patterns</strong><small>Understand your habits</small></span>
-              </div>
-            </div>
             <div className="insights__copy">
-              <span className="kicker">Progress without pressure</span>
-              <h2>Look back. Learn. Keep going.</h2>
-              <p>
-                Your history turns daily logs into useful context. Review
-                streaks, calorie trends, macro patterns, and calendar history
-                whenever you&apos;re ready to go deeper.
+              <p className="eyebrow">A little more context, when you want it</p>
+              <h2>See patterns without turning tracking into a spreadsheet.</h2>
+              <p className="section-copy">
+                Check your history, trends, and streaks when it is helpful—then get back to your day.
               </p>
-              <div className="quiet-features">
-                <div><BellRing aria-hidden="true" /><span><strong>Gentle reminders</strong><small>Daily and streak nudges you control.</small></span></div>
-                <div><Cloud aria-hidden="true" /><span><strong>iCloud backup</strong><small>Keep your tracking data backed up.</small></span></div>
-                <div><ShieldCheck aria-hidden="true" /><span><strong>No separate login</strong><small>Open the app and start tracking.</small></span></div>
-              </div>
+              <ul className="icon-list">
+                <li>
+                  <BarChart3 aria-hidden="true" />
+                  <span><strong>Insights and history</strong><small>Review your progress over time.</small></span>
+                </li>
+                <li>
+                  <ShieldCheck aria-hidden="true" />
+                  <span><strong>Your data stays yours</strong><small>Your food log stays on your device.</small></span>
+                </li>
+                <li>
+                  <Cloud aria-hidden="true" />
+                  <span><strong>iCloud backup</strong><small>Use Apple&apos;s private iCloud backup when you choose.</small></span>
+                </li>
+              </ul>
+            </div>
+            <div className="insights__visual">
+              <Phone
+                alt="Insights screen showing trends and nutrition history"
+                className="phone--insights"
+                src="/screens/insights.png"
+              />
             </div>
           </div>
         </section>
 
-        <section className="section premium">
-          <div className="container premium__card">
-            <div className="premium__icon"><Crown fill="currentColor" aria-hidden="true" /></div>
-            <div className="premium__copy">
-              <span className="kicker">Start free. Go further when you want.</span>
-              <h2>Simple from day one.</h2>
-              <p>
-                Download for free and start tracking. Optional Premium adds
-                barcode scanning, deeper insights, unlimited saved foods and
-                recipes, more themes, and a custom tracking day.
-              </p>
+        <section aria-labelledby="testimonials-heading" className="testimonials section">
+          <div className="container">
+            <div className="testimonial-intro">
+              <p className="eyebrow">From the App Store</p>
+              <h2 id="testimonials-heading">A simple tracker people enjoy using.</h2>
+              <a
+                data-app-store-link="testimonials-rating"
+                href={APP_STORE_URL}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span aria-hidden="true">★★★★★</span> {appStoreSnapshot.rating} from {appStoreSnapshot.ratingCount} ratings <ArrowRight aria-hidden="true" size={17} />
+              </a>
             </div>
-            <AppStoreButton compact placement="premium" />
+            <div className="testimonial-grid">
+              {appStoreSnapshot.testimonials.map((testimonial) => (
+                <figure className="testimonial" key={testimonial.quote}>
+                  <blockquote>“{testimonial.quote}”</blockquote>
+                  <figcaption>{testimonial.label}</figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="section faq" id="faq">
+        <section className="pricing section" id="pricing">
+          <div className="container">
+            <div className="section-heading section-heading--center">
+              <p className="eyebrow">Clear pricing</p>
+              <h2>Start free. Choose more only if it helps.</h2>
+              <p className="section-copy">All purchases are completed and managed securely through the App Store.</p>
+            </div>
+            <div className="pricing-grid">
+              {pricingPlans.map((plan) => (
+                <article className={`pricing-card${plan.featured ? " pricing-card--featured" : ""}`} key={plan.name}>
+                  {plan.featured && <span className="pricing-card__badge">Most flexible</span>}
+                  <h3>{plan.name}</h3>
+                  <p className="pricing-card__price">{plan.price}</p>
+                  <p className="pricing-card__detail">{plan.detail}</p>
+                  <ul>
+                    {plan.features.map((feature) => (
+                      <li key={feature}><Check aria-hidden="true" />{feature}</li>
+                    ))}
+                  </ul>
+                  <a
+                    className="pricing-card__link"
+                    data-app-store-link={`pricing-${plan.name.toLowerCase()}`}
+                    href={APP_STORE_URL}
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Download on the App Store <ArrowRight aria-hidden="true" size={16} />
+                  </a>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="founder section">
+          <div className="container founder__inner">
+            <Image alt="" className="founder__icon" height={86} src="/app-icon.png" width={86} />
+            <div>
+              <p className="eyebrow">Built simply</p>
+              <h2>Made by Paul Khayet for people who want a clearer daily food log.</h2>
+              <p className="section-copy">
+                The Simplest Calorie Tracker is a focused iPhone app built around the essentials: log food, understand your day, and keep moving without a complicated dashboard or a separate account.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="faq section" id="faq">
           <div className="container faq__inner">
             <div className="section-heading">
-              <span className="kicker">Good to know</span>
-              <h2>Frequently asked questions.</h2>
-              <p>Still wondering about something?</p>
-              <a href="mailto:support@thesimplestcalorietracker.com">
-                Ask us directly <ArrowRight size={17} aria-hidden="true" />
-              </a>
+              <p className="eyebrow">Good to know</p>
+              <h2>Questions, answered simply.</h2>
+              <p className="section-copy">Need something more specific? <a href="/support">Visit support</a>.</p>
             </div>
             <div className="faq__list">
               {faqs.map((faq) => (
@@ -507,41 +507,36 @@ export default function Home() {
         </section>
 
         <section className="final-cta">
-          <div className="final-cta__orb final-cta__orb--one" />
-          <div className="final-cta__orb final-cta__orb--two" />
           <div className="container final-cta__inner">
-            <Image src="/app-icon.png" width={96} height={96} alt="" />
-            <span className="kicker">Your simplest first step</span>
-            <h2>Make tracking the easy part.</h2>
-            <p>
-              Download The Simplest Calorie Tracker and log your first meal in
-              minutes.
-            </p>
+            <Image alt="" height={82} src="/app-icon.png" width={82} />
+            <p className="eyebrow">A calmer way to track</p>
+            <h2>Make food logging the easy part.</h2>
+            <p>Download The Simplest Calorie Tracker and start with today.</p>
             <AppStoreButton placement="final-cta" />
-            <small>Free to download on iPhone. Optional in-app purchases.</small>
+            <small>Free to download. Optional in-app purchases.</small>
           </div>
         </section>
       </main>
 
-      <footer>
-        <div className="container footer__inner">
+      <footer className="site-footer">
+        <div className="container site-footer__inner">
           <a className="brand brand--footer" href="#top">
-            <Image className="brand__icon" src="/app-icon.png" width={44} height={44} alt="" />
-            <span><strong>The Simplest</strong><small>Calorie Tracker</small></span>
+            <Image alt="" className="brand__icon" height={38} src="/app-icon.png" width={38} />
+            <span>The Simplest Calorie Tracker</span>
           </a>
-          <div className="footer__links">
-            <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" data-app-store-link="footer">App Store</a>
+          <div className="site-footer__links">
+            <a data-app-store-link="footer" href={APP_STORE_URL} rel="noopener noreferrer" target="_blank">App Store</a>
             <a href="/privacy-policy">Privacy</a>
-            <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer">Terms</a>
+            <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener noreferrer" target="_blank">Terms</a>
             <a href="/support">Support</a>
           </div>
-          <p>© {new Date().getFullYear()} The Simplest Calorie Tracker.</p>
+          <p>© {new Date().getFullYear()} Paul Khayet</p>
         </div>
       </footer>
 
       <div className="mobile-download">
-        <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" data-app-store-link="mobile-sticky">
-          <Apple fill="currentColor" aria-hidden="true" /> Download on the App Store
+        <a data-app-store-link="mobile-sticky" href={APP_STORE_URL} rel="noopener noreferrer" target="_blank">
+          <Apple aria-hidden="true" fill="currentColor" /> Download on the App Store
         </a>
       </div>
     </>

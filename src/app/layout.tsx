@@ -13,11 +13,12 @@ const nunito = Nunito_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://thesimplestcalorietracker.com"),
   title: {
-    default: "The Simplest Calorie Tracker | Calorie Tracker for iPhone",
+    default:
+      "The Simplest Calorie Tracker | Simple Calorie & Macro Tracker for iPhone",
     template: "%s | The Simplest Calorie Tracker",
   },
   description:
-    "A simple calorie tracker for iPhone. Log food fast, track calories and macros, save meals and recipes, scan barcodes, and understand your progress.",
+    "The official website for The Simplest Calorie Tracker, a calm calorie and macro tracker for iPhone. Log food fast, see your day clearly, and keep tracking simple.",
   keywords: [
     "calorie tracker",
     "simple calorie tracker",
@@ -48,24 +49,24 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "/",
     siteName: "The Simplest Calorie Tracker",
-    title: "The calorie tracker that keeps it simple.",
+    title: "The Simplest Calorie Tracker for iPhone",
     description:
-      "Log food in seconds, see where you stand, and get on with your day.",
+      "A calm calorie and macro tracker for iPhone. Log food, see your day clearly, and move on.",
     images: [
       {
-        url: "/og.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "The Simplest Calorie Tracker for iPhone",
+        alt: "The Simplest Calorie Tracker for iPhone — calorie and macro tracking without the clutter",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "The calorie tracker that keeps it simple.",
+    title: "The Simplest Calorie Tracker for iPhone",
     description:
-      "Log food in seconds, see where you stand, and get on with your day.",
-    images: ["/og.png"],
+      "A calm calorie and macro tracker for iPhone. Log food, see your day clearly, and move on.",
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,

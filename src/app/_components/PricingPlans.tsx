@@ -13,7 +13,7 @@ const premiumPlans = {
 } as const;
 
 export function PricingPlans() {
-  const [billingPeriod, setBillingPeriod] = useState<BillingPeriod>("yearly");
+  const [billingPeriod, setBillingPeriod] = useState<BillingPeriod>("monthly");
   const premiumPlan = premiumPlans[billingPeriod];
 
   return (

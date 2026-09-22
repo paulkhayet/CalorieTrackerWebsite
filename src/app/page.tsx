@@ -1,14 +1,11 @@
 import Image from "next/image";
 import {
-  Activity,
   ArrowRight,
   BarChart3,
   Check,
   Cloud,
-  HeartPulse,
   Search,
   ShieldCheck,
-  Target,
 } from "lucide-react";
 import {
   APP_STORE_URL,
@@ -355,47 +352,45 @@ export default function Home() {
           </div>
         </section>
 
-        <section aria-labelledby="health-heading" className="health-features section" id="health">
-          <div className="container">
-            <div className="health-features__intro">
-              <p className="eyebrow">Health features</p>
-              <h2 id="health-heading">Health tracking that works with your routine.</h2>
-              <p className="section-copy">
-                Connect the health information you choose, set goals that make sense for you,
-                and keep the picture clear without turning your day into a project.
-              </p>
+        <section aria-labelledby="health-heading" className="process section" id="health">
+          <div className="container process__inner">
+            <div className="process__visual">
+              <Phone
+                alt="Health screen showing Apple Health connection and step-goal tracking"
+                className="phone--health"
+                src="/screens/health.png"
+              />
             </div>
-
-            <div className="health-features__grid">
-              <article className="health-feature health-feature--primary">
-                <span className="health-feature__icon"><HeartPulse aria-hidden="true" /></span>
-                <div className="health-feature__title-row">
-                  <h3>Apple Health, on your terms</h3>
-                  <span>Premium</span>
-                </div>
-                <p>
-                  Choose the Apple Health permissions you want. Keep steps, active calories,
-                  workouts, and weight in sync when it is helpful.
-                </p>
-              </article>
-
-              <article className="health-feature">
-                <span className="health-feature__icon"><Target aria-hidden="true" /></span>
-                <h3>Goals that fit you</h3>
-                <p>
-                  Set a calorie target, add macro goals when you want them, and choose a deficit,
-                  maintenance, or surplus approach.
-                </p>
-              </article>
-
-              <article className="health-feature">
-                <span className="health-feature__icon"><Activity aria-hidden="true" /></span>
-                <h3>Progress without pressure</h3>
-                <p>
-                  Use optional reminders, streaks, and history to notice patterns and support the
-                  habits you want to keep.
-                </p>
-              </article>
+            <div className="process__copy">
+              <p className="eyebrow">Health features</p>
+              <h2 id="health-heading">Bring movement into your day.</h2>
+              <p className="section-copy">
+                Keep your food tracking and everyday activity in one calm place, with Apple Health
+                controls that stay in your hands.
+              </p>
+              <ol className="process__steps">
+                <li>
+                  <span>1</span>
+                  <div>
+                    <strong>Connect Apple Health</strong>
+                    <p>Start with steps. You choose the permissions you share and can change them in iOS Settings at any time.</p>
+                  </div>
+                </li>
+                <li>
+                  <span>2</span>
+                  <div>
+                    <strong>Set a step goal</strong>
+                    <p>Give your daily movement a clear target alongside the calories and macros you already track.</p>
+                  </div>
+                </li>
+                <li>
+                  <span>3</span>
+                  <div>
+                    <strong>Build a steady streak</strong>
+                    <p>See your progress over time and keep the habits that work for you in view.</p>
+                  </div>
+                </li>
+              </ol>
             </div>
           </div>
         </section>

@@ -82,11 +82,13 @@ function Phone({
   alt,
   priority = false,
   className = "",
+  sizes = "(max-width: 720px) 72vw, (max-width: 1100px) 34vw, 330px",
 }: {
   src: string;
   alt: string;
   priority?: boolean;
   className?: string;
+  sizes?: string;
 }) {
   return (
     <div className={`phone ${className}`.trim()}>
@@ -95,10 +97,11 @@ function Phone({
           alt={alt}
           fill
           preload={priority}
-          sizes="(max-width: 720px) 72vw, (max-width: 1100px) 34vw, 330px"
+          sizes={sizes}
           src={src}
         />
       </div>
+      <span aria-hidden="true" className="phone__side-buttons" />
     </div>
   );
 }
@@ -276,54 +279,72 @@ export default function Home() {
 
             <div className="logging-methods__rail" aria-label="Ways to log food in the app">
               <article className="logging-methods__card">
-                <div className="logging-methods__screen">
-                  <Image alt="Search Foods screen with popular food suggestions" fill sizes="(max-width: 700px) 72vw, 180px" src="/screens/logging/search-food.png" />
-                </div>
+                <Phone
+                  alt="Search Foods screen with popular food suggestions"
+                  className="phone--logging"
+                  sizes="(max-width: 800px) 72vw, (max-width: 980px) 34vw, 17vw"
+                  src="/screens/logging/search-food.png"
+                />
                 <div className="logging-methods__caption">
                   <h3>Search food</h3>
                   <p>Find a food in seconds.</p>
                 </div>
               </article>
               <article className="logging-methods__card">
-                <div className="logging-methods__screen">
-                  <Image alt="Manual food entry screen for calories and macros" fill sizes="(max-width: 700px) 72vw, 180px" src="/screens/logging/manual-entry.png" />
-                </div>
+                <Phone
+                  alt="Manual food entry screen for calories and macros"
+                  className="phone--logging"
+                  sizes="(max-width: 800px) 72vw, (max-width: 980px) 34vw, 17vw"
+                  src="/screens/logging/manual-entry.png"
+                />
                 <div className="logging-methods__caption">
                   <h3>Manual entry</h3>
                   <p>Use your own numbers.</p>
                 </div>
               </article>
               <article className="logging-methods__card">
-                <div className="logging-methods__screen">
-                  <Image alt="Saved Foods library showing everyday meals" fill sizes="(max-width: 700px) 72vw, 180px" src="/screens/logging/saved-foods.png" />
-                </div>
+                <Phone
+                  alt="Saved Foods library showing everyday meals"
+                  className="phone--logging"
+                  sizes="(max-width: 800px) 72vw, (max-width: 980px) 34vw, 17vw"
+                  src="/screens/logging/saved-foods.png"
+                />
                 <div className="logging-methods__caption">
                   <h3>Saved foods</h3>
                   <p>Reuse your regulars.</p>
                 </div>
               </article>
               <article className="logging-methods__card">
-                <div className="logging-methods__screen">
-                  <Image alt="Recipes library showing a saved meal" fill sizes="(max-width: 700px) 72vw, 180px" src="/screens/logging/recipes.png" />
-                </div>
+                <Phone
+                  alt="Recipes library showing a saved meal"
+                  className="phone--logging"
+                  sizes="(max-width: 800px) 72vw, (max-width: 980px) 34vw, 17vw"
+                  src="/screens/logging/recipes.png"
+                />
                 <div className="logging-methods__caption">
                   <h3>Recipes</h3>
                   <p>Log the whole meal.</p>
                 </div>
               </article>
               <article className="logging-methods__card">
-                <div className="logging-methods__screen">
-                  <Image alt="Barcode scanner for packaged foods" fill sizes="(max-width: 700px) 72vw, 180px" src="/screens/logging/scan-barcode.png" />
-                </div>
+                <Phone
+                  alt="Barcode scanner for packaged foods"
+                  className="phone--logging"
+                  sizes="(max-width: 800px) 72vw, (max-width: 980px) 34vw, 17vw"
+                  src="/screens/logging/scan-barcode.png"
+                />
                 <div className="logging-methods__caption">
                   <div className="logging-methods__title-row"><h3>Scan barcode</h3><span>Premium</span></div>
                   <p>Point, scan, and add.</p>
                 </div>
               </article>
               <article className="logging-methods__card">
-                <div className="logging-methods__screen">
-                  <Image alt="AI meal scan screen with photo and photo-library options" fill sizes="(max-width: 700px) 72vw, 180px" src="/screens/logging/scan-meal.png" />
-                </div>
+                <Phone
+                  alt="AI meal scan screen with photo and photo-library options"
+                  className="phone--logging"
+                  sizes="(max-width: 800px) 72vw, (max-width: 980px) 34vw, 17vw"
+                  src="/screens/logging/scan-meal.png"
+                />
                 <div className="logging-methods__caption">
                   <div className="logging-methods__title-row"><h3>Scan meal</h3><span>Premium</span></div>
                   <p>Snap it, then review it.</p>

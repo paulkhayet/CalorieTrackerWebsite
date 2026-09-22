@@ -491,8 +491,6 @@ h3 {
   min-height: 610px;
   align-items: center;
   justify-content: center;
-  border-radius: 36px;
-  background: var(--peach-soft);
 }
 
 .phone--health {

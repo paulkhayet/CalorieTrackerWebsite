@@ -197,6 +197,7 @@ export default function Home() {
             <span>The Simplest Calorie Tracker</span>
           </a>
           <nav aria-label="Primary navigation">
+            <a href="#top">Home</a>
             <a href="#health">Health</a>
             <a href="#pricing">Pricing</a>
             <a href="#faq">FAQ</a>

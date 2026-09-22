@@ -9,9 +9,9 @@ import {
 import {
   APP_STORE_URL,
   appStoreSnapshot,
-  pricingPlans,
   SITE_URL,
 } from "./_content/marketing";
+import { PricingPlans } from "./_components/PricingPlans";
 
 const faqs = [
   {
@@ -440,30 +440,7 @@ export default function Home() {
               <h2>Start free. Choose the Premium option that fits.</h2>
               <p className="section-copy">All purchases are completed and managed securely through the App Store.</p>
             </div>
-            <div className="pricing-grid">
-              {pricingPlans.map((plan) => (
-                <article className={`pricing-card${plan.featured ? " pricing-card--featured" : ""}`} key={plan.name}>
-                  {plan.badge && <span className="pricing-card__badge">{plan.badge}</span>}
-                  <h3>{plan.name}</h3>
-                  <p className="pricing-card__price">{plan.price}</p>
-                  <p className="pricing-card__detail">{plan.detail}</p>
-                  <ul>
-                    {plan.features.map((feature) => (
-                      <li key={feature}><Check aria-hidden="true" />{feature}</li>
-                    ))}
-                  </ul>
-                  <a
-                    className="pricing-card__link"
-                    data-app-store-link={`pricing-${plan.name.toLowerCase()}`}
-                    href={APP_STORE_URL}
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
-                    Download on the App Store <ArrowRight aria-hidden="true" size={16} />
-                  </a>
-                </article>
-              ))}
-            </div>
+            <PricingPlans />
           </div>
         </section>
 

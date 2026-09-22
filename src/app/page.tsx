@@ -4,7 +4,6 @@ import {
   BarChart3,
   Check,
   Cloud,
-  Search,
   ShieldCheck,
 } from "lucide-react";
 import {
@@ -49,27 +48,6 @@ const faqs = [
     question: "How do I get help?",
     answer:
       "Visit our Support page or email support@thesimplestcalorietracker.com. Include your iPhone model, iOS version, app version, and a screenshot when it helps us understand an issue.",
-  },
-];
-
-const benefits = [
-  {
-    icon: Search,
-    title: "Log with less effort",
-    copy: "Search thousands of foods, enter nutrition yourself, or return to foods and recipes you use often.",
-    points: ["Food search", "Manual entry", "Saved foods and recipes"],
-  },
-  {
-    icon: BarChart3,
-    title: "See your day clearly",
-    copy: "Calories, macros, optional fiber, and water stay together in a Today view that is easy to scan.",
-    points: ["Daily calorie goals", "Optional macros and water", "Serving sizes and grams"],
-  },
-  {
-    icon: Cloud,
-    title: "Keep it your way",
-    copy: "Set the goals and reminders that fit your routine, see your history when useful, and keep your data backed up.",
-    points: ["Goals and streaks", "Insights and history", "Private iCloud backup"],
   },
 ];
 
@@ -220,7 +198,6 @@ export default function Home() {
           </a>
           <nav aria-label="Primary navigation">
             <a href="#health">Health</a>
-            <a href="#features">Features</a>
             <a href="#pricing">Pricing</a>
             <a href="#faq">FAQ</a>
           </nav>
@@ -398,34 +375,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="features section" id="features">
-          <div className="container">
-            <div className="section-heading section-heading--center">
-              <p className="eyebrow">Made for the everyday</p>
-              <h2>Simple on purpose. Capable when you need it.</h2>
-              <p className="section-copy">The features stay focused on helping you log, understand, and continue.</p>
-            </div>
-            <div className="benefit-grid">
-              {benefits.map((benefit) => {
-                const Icon = benefit.icon;
-
-                return (
-                  <article className="benefit-card" key={benefit.title}>
-                    <span className="benefit-card__icon"><Icon aria-hidden="true" /></span>
-                    <h3>{benefit.title}</h3>
-                    <p>{benefit.copy}</p>
-                    <ul>
-                      {benefit.points.map((point) => (
-                        <li key={point}><Check aria-hidden="true" />{point}</li>
-                      ))}
-                    </ul>
-                  </article>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
         <section className="insights section">
           <div className="container insights__inner">
             <div className="insights__copy">
@@ -453,7 +402,7 @@ export default function Home() {
               <Phone
                 alt="Insights screen showing trends and nutrition history"
                 className="phone--insights"
-                src="/screens/insights.png"
+                src="/screens/insights-summary.png"
               />
             </div>
           </div>

@@ -116,9 +116,7 @@ function Phone({
         <Image
           alt={alt}
           fill
-          fetchPriority={priority ? "high" : "auto"}
-          loading={priority ? "eager" : "lazy"}
-          priority={priority}
+          preload={priority}
           sizes="(max-width: 720px) 72vw, (max-width: 1100px) 34vw, 330px"
           src={src}
         />
@@ -278,6 +276,11 @@ export default function Home() {
                 className="phone--hero"
                 priority
                 src="/screens/today.png"
+              />
+              <Phone
+                alt="The Health screen showing Apple Health connection and daily step progress"
+                className="phone--hero-health"
+                src="/screens/health.png"
               />
             </div>
           </div>

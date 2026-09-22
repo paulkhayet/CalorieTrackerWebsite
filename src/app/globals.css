@@ -419,7 +419,7 @@ h3 {
   grid-auto-flow: column;
   gap: 24px;
   overflow-x: auto;
-  padding-bottom: 14px;
+  padding: 8px 0 20px;
   scrollbar-width: thin;
 }
 
@@ -1642,7 +1642,7 @@ h3 {
     grid-template-columns: unset;
     overflow-x: auto;
     margin-right: calc(-1 * ((100vw - min(100% - 48px, 1140px)) / 2));
-    padding: 0 calc((100vw - min(100% - 48px, 1140px)) / 2) 12px 0;
+    padding: 8px calc((100vw - min(100% - 48px, 1140px))  / 2) 20px 0;
     scroll-snap-type: x mandatory;
     scrollbar-width: thin;
   }
@@ -1659,7 +1659,7 @@ h3 {
     grid-template-columns: unset;
     overflow-x: auto;
     margin-right: calc(-1 * ((100vw - min(100% - 48px, 1140px)) / 2));
-    padding: 0 calc((100vw - min(100% - 48px, 1140px)) / 2) 12px 0;
+    padding: 8px calc((100vw - min(100% - 48px, 1140px)) / 2) 20px 0;
     scroll-snap-type: x mandatory;
     scrollbar-width: thin;
   }

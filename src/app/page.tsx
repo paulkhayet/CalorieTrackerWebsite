@@ -423,10 +423,34 @@ export default function Home() {
               </a>
             </div>
             <div className="testimonial-grid">
-              {appStoreSnapshot.testimonials.map((testimonial) => (
+              {appStoreSnapshot.testimonials.map((testimonial, index) => (
                 <figure className="testimonial" key={testimonial.quote}>
+                  <div className="testimonial__app">
+                    <Image
+                      alt=""
+                      className="testimonial__icon"
+                      height={40}
+                      src="/app-icon.png"
+                      width={40}
+                    />
+                    <div>
+                      <strong>The Simplest Calorie Tracker</strong>
+                      <span>App Store</span>
+                    </div>
+                  </div>
+                  <div aria-hidden="true" className="testimonial__stars">★★★★★</div>
                   <blockquote>“{testimonial.quote}”</blockquote>
-                  <figcaption>{testimonial.label}</figcaption>
+                  <figcaption>
+                    <span>{testimonial.label}</span>
+                    <a
+                      data-app-store-link={`testimonials-review-${index + 1}`}
+                      href={APP_STORE_URL}
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Read on the App Store <ArrowRight aria-hidden="true" size={14} />
+                    </a>
+                  </figcaption>
                 </figure>
               ))}
             </div>

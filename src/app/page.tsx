@@ -278,9 +278,9 @@ export default function Home() {
                 src="/screens/today.png"
               />
               <Phone
-                alt="The Health screen showing Apple Health connection and daily step progress"
+                alt="The Health screen showing daily steps, an activity streak, and workout progress"
                 className="phone--hero-health"
-                src="/screens/health.png"
+                src="/screens/health-today.png"
               />
             </div>
           </div>
@@ -359,9 +359,9 @@ export default function Home() {
           <div className="container process__inner">
             <div className="process__visual">
               <Phone
-                alt="Health screen showing Apple Health connection and step-goal tracking"
+                alt="Health screen showing daily steps, an activity streak, and workout progress"
                 className="phone--health"
-                src="/screens/health.png"
+                src="/screens/health-today.png"
               />
             </div>
             <div className="process__copy">

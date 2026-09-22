@@ -387,6 +387,10 @@ h3 {
   color: var(--white);
 }
 
+.logging-methods .container {
+  width: min(100% - 64px, 1760px);
+}
+
 .logging-methods .eyebrow {
   color: #deded9;
 }
@@ -402,8 +406,12 @@ h3 {
 
 .logging-methods__rail {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  gap: 16px;
+  grid-auto-columns: minmax(220px, 17vw);
+  grid-auto-flow: column;
+  gap: 24px;
+  overflow-x: auto;
+  padding-bottom: 14px;
+  scrollbar-width: thin;
 }
 
 .logging-methods__card {

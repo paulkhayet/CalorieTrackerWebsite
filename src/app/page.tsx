@@ -1,11 +1,14 @@
 import Image from "next/image";
 import {
+  Activity,
   ArrowRight,
   BarChart3,
   Check,
   Cloud,
+  HeartPulse,
   Search,
   ShieldCheck,
+  Target,
 } from "lucide-react";
 import {
   APP_STORE_URL,
@@ -221,7 +224,7 @@ export default function Home() {
             <span>The Simplest Calorie Tracker</span>
           </a>
           <nav aria-label="Primary navigation">
-            <a href="#how-it-works">How it works</a>
+            <a href="#health">Health</a>
             <a href="#features">Features</a>
             <a href="#pricing">Pricing</a>
             <a href="#faq">FAQ</a>
@@ -352,45 +355,47 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="process section" id="how-it-works">
-          <div className="container process__inner">
-            <div className="process__visual">
-              <Phone
-                alt="Food search screen with suggestions for logging a meal"
-                className="phone--search"
-                src="/screens/search.png"
-              />
-            </div>
-            <div className="process__copy">
-              <p className="eyebrow">How it works</p>
-              <h2>Find it. Log it. See your day.</h2>
+        <section aria-labelledby="health-heading" className="health-features section" id="health">
+          <div className="container">
+            <div className="health-features__intro">
+              <p className="eyebrow">Health features</p>
+              <h2 id="health-heading">Health tracking that works with your routine.</h2>
               <p className="section-copy">
-                The app is designed around the few moments that matter: adding
-                food and understanding today&apos;s progress.
+                Connect the health information you choose, set goals that make sense for you,
+                and keep the picture clear without turning your day into a project.
               </p>
-              <ol className="process__steps">
-                <li>
-                  <span>1</span>
-                  <div>
-                    <strong>Find your food</strong>
-                    <p>Search, use a saved food, scan a barcode with Premium, or add it yourself.</p>
-                  </div>
-                </li>
-                <li>
-                  <span>2</span>
-                  <div>
-                    <strong>Log the serving</strong>
-                    <p>Choose a serving size or grams, then add it to today in a few taps.</p>
-                  </div>
-                </li>
-                <li>
-                  <span>3</span>
-                  <div>
-                    <strong>See where you stand</strong>
-                    <p>Your calorie and macro progress updates in one simple, useful view.</p>
-                  </div>
-                </li>
-              </ol>
+            </div>
+
+            <div className="health-features__grid">
+              <article className="health-feature health-feature--primary">
+                <span className="health-feature__icon"><HeartPulse aria-hidden="true" /></span>
+                <div className="health-feature__title-row">
+                  <h3>Apple Health, on your terms</h3>
+                  <span>Premium</span>
+                </div>
+                <p>
+                  Choose the Apple Health permissions you want. Keep steps, active calories,
+                  workouts, and weight in sync when it is helpful.
+                </p>
+              </article>
+
+              <article className="health-feature">
+                <span className="health-feature__icon"><Target aria-hidden="true" /></span>
+                <h3>Goals that fit you</h3>
+                <p>
+                  Set a calorie target, add macro goals when you want them, and choose a deficit,
+                  maintenance, or surplus approach.
+                </p>
+              </article>
+
+              <article className="health-feature">
+                <span className="health-feature__icon"><Activity aria-hidden="true" /></span>
+                <h3>Progress without pressure</h3>
+                <p>
+                  Use optional reminders, streaks, and history to notice patterns and support the
+                  habits you want to keep.
+                </p>
+              </article>
             </div>
           </div>
         </section>

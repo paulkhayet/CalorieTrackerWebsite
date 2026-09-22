@@ -226,7 +226,7 @@ h3 {
 
 .hero__inner {
   display: grid;
-  min-height: 722px;
+  min-height: 820px;
   grid-template-columns: minmax(0, 1.03fr) minmax(400px, 0.97fr);
   align-items: center;
   gap: 46px;
@@ -331,7 +331,7 @@ h3 {
 .hero__visual {
   position: relative;
   display: flex;
-  min-height: 625px;
+  min-height: 700px;
   align-items: center;
   justify-content: center;
 }

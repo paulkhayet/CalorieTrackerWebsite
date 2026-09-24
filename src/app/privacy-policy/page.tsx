@@ -48,7 +48,7 @@ export default function PrivacyPolicyPage() {
             A clear explanation of what information the app handles, what stays on your device, and how we use limited product analytics.
           </p>
           <div className="privacy-meta">
-            <span>Effective date: August 28, 2026</span>
+            <span>Effective date: September 24, 2026</span>
             <span>Applies to: The Simplest Calorie Tracker for iPhone</span>
           </div>
         </div>
@@ -64,6 +64,7 @@ export default function PrivacyPolicyPage() {
           <nav className="privacy-contents" aria-label="On this page">
             <a href="#summary">Summary</a>
             <a href="#information">Information we collect</a>
+            <a href="#meal-scan">Meal Scan</a>
             <a href="#analytics">PostHog analytics</a>
             <a href="#choices">Your choices</a>
             <a href="#contact">Contact</a>
@@ -93,8 +94,18 @@ export default function PrivacyPolicyPage() {
             </div>
           </section>
 
-          <section id="analytics" className="privacy-section privacy-section--highlight">
+          <section id="meal-scan" className="privacy-section">
             <span className="privacy-section__number">03</span>
+            <div>
+              <h2>Meal Scan photos and notes</h2>
+              <p>If you choose to use Meal Scan, the app removes photo metadata on your device and sends the meal photo and any optional note through our Supabase function to OpenAI to generate editable nutrition estimates. The request also includes purchase and device-integrity information to verify Premium access and prevent abuse. Meal Scan is an optional Premium feature.</p>
+              <p>We do not store the photo or note in our own database, CloudKit or iCloud backup, Supabase Storage, or PostHog. Meal Scan is not covered by Zero Data Retention. Under OpenAI’s standard API processing, abuse-monitoring logs may retain submitted content for up to 30 days, or longer if required by law or reasonably necessary to protect its services. OpenAI does not use API data to train or improve its models unless a customer explicitly opts in.</p>
+              <p>We send only privacy-safe operational events to PostHog for Meal Scan, such as whether a scan started, completed, failed, or reached a limit. We do not send meal photos, notes, food names, portions, or nutrition values to PostHog.</p>
+            </div>
+          </section>
+
+          <section id="analytics" className="privacy-section privacy-section--highlight">
+            <span className="privacy-section__number">04</span>
             <div>
               <h2>PostHog product analytics</h2>
               <p>We use PostHog, a product analytics service, at <a href="https://us.i.posthog.com" target="_blank" rel="noopener noreferrer">us.i.posthog.com</a> to understand high-level app usage. PostHog may process a pseudonymous device or installation identifier, app version and build, platform, debug-build status, screen names, and broad event properties.</p>
@@ -105,7 +116,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="privacy-section">
-            <span className="privacy-section__number">04</span>
+            <span className="privacy-section__number">05</span>
             <div>
               <h2>How we use information</h2>
               <ul className="privacy-list">
@@ -118,7 +129,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="privacy-section">
-            <span className="privacy-section__number">05</span>
+            <span className="privacy-section__number">06</span>
             <div>
               <h2>Storage, sharing, and retention</h2>
               <p>We do not sell or rent your information. The tracking data you enter is stored securely on your device and is not accessible to us. If you enable iCloud backup, Apple manages the secure backup in your private iCloud account; we cannot access that backup. Analytics and support information may be processed by the service providers described above only to provide their respective services.</p>
@@ -127,7 +138,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section id="choices" className="privacy-section">
-            <span className="privacy-section__number">06</span>
+            <span className="privacy-section__number">07</span>
             <div>
               <h2>Your choices</h2>
               <ul className="privacy-list">
@@ -138,7 +149,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="privacy-section">
-            <span className="privacy-section__number">07</span>
+            <span className="privacy-section__number">08</span>
             <div>
               <h2>Children’s privacy</h2>
               <p>The app is not directed to children under 13, and we do not knowingly collect personal information from children.</p>
@@ -146,7 +157,7 @@ export default function PrivacyPolicyPage() {
           </section>
 
           <section className="privacy-section" id="contact">
-            <span className="privacy-section__number">08</span>
+            <span className="privacy-section__number">09</span>
             <div>
               <h2>Changes and contact</h2>
               <p>We may update this policy as the app or its services change. When we do, we will update the effective date on this page.</p>
@@ -159,7 +170,7 @@ export default function PrivacyPolicyPage() {
       <footer className="privacy-footer">
         <div className="container privacy-footer__inner">
           <Link href="/">The Simplest Calorie Tracker</Link>
-          <span>Last updated: August 28, 2026</span>
+          <span>Last updated: September 24, 2026</span>
           <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" data-app-store-link="privacy-footer">Download on the App Store <ArrowRight size={15} aria-hidden="true" /></a>
         </div>
       </footer>

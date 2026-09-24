@@ -53,7 +53,7 @@ export const pricingPlans = [
   },
   {
     name: "Premium Monthly",
-    price: "$3.99",
+    price: "$4.99",
     detail: "Per month, managed through Apple.",
     badge: null,
     features: [
@@ -69,7 +69,7 @@ export const pricingPlans = [
     name: "Premium Yearly",
     price: "$29.99",
     detail: "Per year, managed through Apple.",
-    badge: "Save 37%",
+    badge: "Save 50%",
     features: [
       "Barcode scanning",
       "AI Meal Scanning",

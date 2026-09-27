@@ -48,7 +48,7 @@ export default function PrivacyPolicyPage() {
             A clear explanation of what information the app handles, what stays on your device, and how we use limited product analytics.
           </p>
           <div className="privacy-meta">
-            <span>Effective date: September 24, 2026</span>
+            <span>Effective date: September 27, 2026</span>
             <span>Applies to: The Simplest Calorie Tracker for iPhone</span>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function PrivacyPolicyPage() {
             <div>
               <h2>Summary</h2>
               <p>The Simplest Calorie Tracker is built to help you log food without requiring a separate account. The nutrition data and settings you enter are stored securely on your device and are not accessible to us. When you enable iCloud backup, Apple may securely include that data in your private iCloud backup, which we also cannot access. We do not sell your personal information.</p>
-              <p>We use limited, anonymous or pseudonymous product analytics to understand which app features are useful and to improve reliability. The analytics are designed not to include the details of what you eat.</p>
+              <p>We use limited, anonymous or pseudonymous product analytics to understand which app features are useful and to improve reliability. PostHog events do not include the details of what you eat. Our food-search service separately records search terms, as explained below.</p>
             </div>
           </section>
 
@@ -87,6 +87,8 @@ export default function PrivacyPolicyPage() {
               <h2>Information we collect</h2>
               <h3>Information you enter</h3>
               <p>Foods, calories, macro goals, water entries, exercise, weight entries, recipes, reminders, and other tracking settings are used to provide the app’s features and are stored securely on your device. We do not have access to this data. If you turn on iCloud backup, Apple may store a protected copy in your private iCloud account; that backup is managed by Apple and is not accessible to us.</p>
+              <h3>Food searches</h3>
+              <p>When you search our food database, the query is sent to our search service. We store the search term, result count, response time, and a randomly generated installation identifier in our Supabase database to operate and improve search. Search terms can reveal food interests or habits. They are not added to your diary automatically and are not sent to PostHog.</p>
               <h3>Support messages</h3>
               <p>If you contact us, we receive the email address you use and the contents of your message so we can respond and resolve your request. Support messages are retained only as long as reasonably needed.</p>
               <h3>Apple services</h3>
@@ -132,8 +134,8 @@ export default function PrivacyPolicyPage() {
             <span className="privacy-section__number">06</span>
             <div>
               <h2>Storage, sharing, and retention</h2>
-              <p>We do not sell or rent your information. The tracking data you enter is stored securely on your device and is not accessible to us. If you enable iCloud backup, Apple manages the secure backup in your private iCloud account; we cannot access that backup. Analytics and support information may be processed by the service providers described above only to provide their respective services.</p>
-              <p>We keep support communications and analytics only for as long as reasonably necessary for support, security, reliability, and product-improvement purposes.</p>
+              <p>We do not sell or rent your information. Diary entries and tracking settings are stored securely on your device and are not accessible to us. If you enable iCloud backup, Apple manages the secure backup in your private iCloud account; we cannot access that backup. Food-search records are stored in our Supabase database. Analytics and support information may be processed by the service providers described above only to provide their respective services.</p>
+              <p>We keep search records, support communications, and analytics only for as long as reasonably necessary for search quality, support, security, reliability, and product-improvement purposes.</p>
             </div>
           </section>
 
@@ -170,7 +172,7 @@ export default function PrivacyPolicyPage() {
       <footer className="privacy-footer">
         <div className="container privacy-footer__inner">
           <Link href="/">The Simplest Calorie Tracker</Link>
-          <span>Last updated: September 24, 2026</span>
+          <span>Last updated: September 27, 2026</span>
           <a href={APP_STORE_URL} target="_blank" rel="noopener noreferrer" data-app-store-link="privacy-footer">Download on the App Store <ArrowRight size={15} aria-hidden="true" /></a>
         </div>
       </footer>
